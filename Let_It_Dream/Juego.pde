@@ -86,6 +86,11 @@ class Dreamer{
  float g;
  float l;
  float vel;
+ boolean tecla=true; //para que el salto se haga una sola vez
+ float salto=0;
+ float base=0;
+ boolean y_inicial=false; //guarda las coordenadas de y al saltar
+ boolean abajo=false;
  Dreamer(float xt, float yt){
    x=xt;
    y=yt;
@@ -98,7 +103,7 @@ class Dreamer{
    S4P.updateSprites(elapsedTime); 
    translate(x,y);   
    S4P.drawSprites();        
-     
+    
      if (keyCode==RIGHT || keyCode==LEFT){    
   
        if (abs(y)-55<=150){  //Límtes del suelo
@@ -115,20 +120,47 @@ class Dreamer{
         x-=3;
        }   
        if(keyCode==UP){
-        x-=3;
+        y-=3;
        }
        if(keyCode==DOWN){
-        x+=3;
+        y+=3;
        }        
        
      }
-     
      if(keyCode==BACKSPACE){
-       y-=4;
-       x+=2;
-       
-       
-       
+       print("s");
+       if(tecla==true){
+         while(y_inicial==false){
+           salto=y-250; //altura del salto
+           base=y; //limite inferior del salto
+           y_inicial=true;
+         }
+         if (abajo==false){
+             if(abs(y)<abs(salto)){
+               y-=6;
+             }
+             else{
+               abajo=true;
+             }
+         }
+         if(abajo==true){
+           if(abs(y)>=abs(base)){
+             y+=6;
+             if(y==base){
+               y_inicial=false;
+               print("d");
+             }
+           }
+           else {
+             print("ss");
+             abajo=false;
+             tecla=false; //no salta más
+           }         
+         }
+       }
+       if(keyPressed==true){
+        tecla=true; 
+       }
      }
    }
  
