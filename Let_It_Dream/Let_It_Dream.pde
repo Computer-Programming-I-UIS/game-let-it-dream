@@ -9,6 +9,7 @@ Sprite Nix, Dragon;
 StopWatch sw = new StopWatch();
 //-----------------------------------
 Dreamer Entidad;
+plataformas[] prueba2= new plataformas[10];
 
 
 
@@ -42,7 +43,12 @@ void setup(){
  //----------------------------------Suelo-----------------------------------------
  base = new suelo(-5,-5,width+10,-150); //En y se debe ajustar con lios límites de las barras por abajo
  //--------------------------------Plataformas-----------------------------------
- plataforma = new plataformas(0,0,100,20);
+ 
+ //plataforma = new plataformas(0,0,100,20);
+ for(int i=0 ;i<prueba2.length;i++ ){
+ prueba2[i]= new plataformas();
+  
+}
 }
 
 void draw(){
@@ -50,6 +56,7 @@ void draw(){
  background(30);
  //Para cambiar de pantalla en pantalla
  inicial.apartado();
+
   
   
   

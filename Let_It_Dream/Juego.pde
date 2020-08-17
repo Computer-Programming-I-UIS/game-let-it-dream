@@ -5,35 +5,30 @@ class plataformas{
   float l;
   float C;
   float vel;
+  float limite=0;
   boolean spawn=true;
   float limites_x=110; //Limites para el spawn de las barras  
   float limite_y_arriba=height-300;
   float limite_y_abajo=200;  
-  plataformas(float xt, float yt, float gt, float lt){
-    x=xt;
-    y=yt;
-    g=gt;
-    l=lt; 
+   plataformas(){
+    x=random(350,1280);
+    y=random(-720,-120);
+    g=random(50,100);
+    l=random(20,30); 
   }
   
   void spawn_point(){
-    if (spawn==true){           //Para la velocidad y posiciones de las plataformas
-      vel=random(5,10);
-      x=width+limites_x;
-      y=-random(limite_y_abajo,limite_y_arriba);
-      spawn=false;
-    }
-    fill(255);
+   fill (255); 
     rect(x,y,g,l);
-  }  
- //------------------------------------------------------- 
-  void mov(){
-    x-=vel;
-    
-    if (x<-limites_x){
-     spawn=true;       
     }
-  }  
+ //------------------------------------------------------- 
+  void move(){
+    x-=3;
+    if (x<=limite){
+     x=1290;
+     y=random(-780,-120);
+    }
+  }
   
 
   

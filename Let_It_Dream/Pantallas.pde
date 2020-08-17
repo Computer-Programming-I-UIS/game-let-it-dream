@@ -22,8 +22,10 @@ class pantalla{
          //Back.in();   //Tal vez esto no vaya 
          //Back.spawn();
          base.spawn();
-         plataforma.spawn_point();
-         plataforma.mov();
+       for(int i=0;i<prueba2.length;i++){
+              prueba2[i].spawn_point(); 
+              prueba2[i].move();
+              }
          Entidad.spawn();
          
        break;
