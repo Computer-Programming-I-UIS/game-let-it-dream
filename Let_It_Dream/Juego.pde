@@ -29,9 +29,6 @@ class plataformas{
      y=random(-780,-120);
     }
   }
-  
-
-  
 }
 
 
@@ -63,7 +60,7 @@ class suelo{
   }  
   
   void spawn(){
-    fill(255);
+    fill(0);
     rect(x,y,g,l);
     
     
@@ -80,48 +77,54 @@ class Dreamer{
  float y;
  float g;
  float l;
- float vel;
+ float vel=3; //USSAR
  boolean tecla=true; //para que el salto se haga una sola vez
  float salto=0;
  float base=0;
  boolean y_inicial=false; //guarda las coordenadas de y al saltar
  boolean abajo=false;
+ float a,b,c,d;
  Dreamer(float xt, float yt){
    x=xt;
    y=yt;
+
    
    
  }
  
  void spawn(){
    float elapsedTime = (float) sw.getElapsedTime();
-   S4P.updateSprites(elapsedTime); 
-   translate(x,y);   
-   S4P.drawSprites();        
-    
+   S4P.updateSprites(elapsedTime);    
+    pushMatrix();  
+    translate(x,y);
+    Nix.draw();
+    popMatrix();
+//---------------------------------Mov
+
      if (keyCode==RIGHT || keyCode==LEFT){    
-  
+
        if (abs(y)-55<=150){  //Límtes del suelo
-        y=-150;    
+        y=-80;    
        }    
-       if (x>width+55){
+       if (x>width+55){  //Límites de la pantalla horizontal TAL VEZ SE DEBA QUITAR
         x=-55; 
        }
        
        if(keyCode==RIGHT){
-        x+=3;
+        x+=vel;
        }
        if(keyCode==LEFT){
-        x-=3;
+        x-=vel;
        }   
        if(keyCode==UP){
-        y-=3;
+        y-=vel;
        }
        if(keyCode==DOWN){
-        y+=3;
+        y+=vel;
        }        
        
      }
+
      if(keyCode==BACKSPACE){
        print("s");
        if(tecla==true){
@@ -156,8 +159,95 @@ class Dreamer{
        if(keyPressed==true){
         tecla=true; 
        }
+     }    
+     
+ }
+ 
+}
+
+
+class Monster{
+ float x;
+ float y;
+ float vel=0.2;
+ float ref_y; ///referencia con el personaje
+ float ref_x; 
+ boolean arriba = false;
+ Monster(float xt, float yt){
+   x=xt;
+   y=yt;
+ }
+ void move(){
+   
+//Movimiento del dragón por la pantalla
+   if(arriba == false){
+     if(abs(y)>=120){ //Límite inferior del dragón    
+       y+=random(2,4);         
+     }
+     else{
+       arriba=true;
      }
    }
- 
- 
+   if (arriba==true){
+     if(abs(y)<=height-40){ //Límite superior del dragón
+       y-=random(2,4);
+     }
+     else{
+       arriba=false;
+     }
+   }
+   //Cuando el personaje se acerca
+   ref_x=Entidad.x;
+   ref_y=Entidad.y;
+   if(ref_x-(x)<=250){
+     //print('l');
+     if(abs(y)>abs(ref_y)+30){
+        y-=ref_y*vel; 
+     }
+     if(abs(y)<abs(ref_y)-30){
+        y+=ref_y*vel;  
+     }   
+   
+     
+     
+   }
+
+ }
+ void spawn(){
+   float elapsedTime = (float) sw.getElapsedTime();
+   S4P.updateSprites(elapsedTime);    
+    pushMatrix();  
+    translate(x,y);
+    Norman.draw();
+    popMatrix();     
+
+ }
+  
+  
+}
+
+
+//CLASE DE PRUEBA ------ BORRAR
+class enemigo{
+ float x;
+ float y;
+ enemigo(float xt, float yt){
+   x=xt;
+   y=yt;
+ }
+ void spawn(){
+   float elapsedTime = (float) sw.getElapsedTime();
+   S4P.updateSprites(elapsedTime);    
+   pushMatrix();  
+   translate(x,y);
+   Sombra.draw();
+   popMatrix();     
+   sprites.S4P.rebound(Nix,Sombra);
+   sprites.S4P.collisionAreasVisible = true;   
+   print(Nix.pp_collision(Nix));  
+   
+
+
+ }
+  
 }
