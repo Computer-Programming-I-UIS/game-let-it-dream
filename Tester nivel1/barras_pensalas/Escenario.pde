@@ -1,6 +1,6 @@
 class Escenario {
   int t=0;
-  int n=115;
+  int n=245;
   int cols;
   int rows;
   char [][] escenario;
@@ -145,7 +145,71 @@ break;
      }
    }
  break;
-  
+ case 6:
+  translate(-7680,0);
+    for (int i=0; i<rows;i++){
+     for(int j=0; j<n;j++){
+      if(escenario[j][i]== 'M'){
+       stroke(255);
+       strokeWeight(5);
+       fill(20,242,240);
+       rect(j*60,i*160,100,30); 
+      }
+     }
+   }
+ break;
+ case 7:
+   translate(-8960,0);
+    for (int i=0; i<rows;i++){
+     for(int j=0; j<n;j++){
+      if(escenario[j][i]== 'M'){
+       stroke(255);
+       strokeWeight(5);
+       fill(20,242,240);
+       rect(j*60,i*160,100,30); 
+      }
+     }
+   }
+   break;
+  case 8:
+     translate(-10240,0);
+    for (int i=0; i<rows;i++){
+     for(int j=0; j<n;j++){
+      if(escenario[j][i]== 'M'){
+       stroke(255);
+       strokeWeight(5);
+       fill(20,242,240);
+       rect(j*60,i*160,100,30); 
+      }
+     }
+   }
+   break;
+   case 9:
+     translate(-11520,0);
+    for (int i=0; i<rows;i++){
+     for(int j=0; j<n;j++){
+      if(escenario[j][i]== 'M'){
+       stroke(255);
+       strokeWeight(5);
+       fill(20,242,240);
+       rect(j*60,i*160,100,30); 
+      }
+     }
+   }
+   break;
+   case 10:
+       translate(-12800,0);
+    for (int i=0; i<rows;i++){
+     for(int j=0; j<n;j++){
+      if(escenario[j][i]== 'M'){
+       stroke(255);
+       strokeWeight(5);
+       fill(20,242,240);
+       rect(j*60,i*160,100,30); 
+      }
+     }
+   }
+   break;
 }
   }
   

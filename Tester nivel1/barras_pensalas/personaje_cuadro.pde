@@ -6,7 +6,7 @@ class cuadro{
  }
  void cuadrin(){
   rect(x,y,100,30);
-  x+=5;
+  x+=10;
  }
   
   

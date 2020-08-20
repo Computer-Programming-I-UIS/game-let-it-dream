@@ -3,7 +3,7 @@ cuadro personaje;
 
 void setup(){
 
-nivel=new Escenario(200,6,"hola.txt");
+nivel=new Escenario(270,6,"hola.txt");
 personaje=new cuadro(0,300);
 //nivel.obtenerDatos();
   
