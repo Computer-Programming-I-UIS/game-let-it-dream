@@ -73,95 +73,95 @@ class suelo{
 
 
 class Dreamer{
- float x;
- float y;
- float g;
- float l;
- float vel=3; //USSAR
+ float x; 
+ float y; 
+ float vel=3; 
  boolean tecla=true; //para que el salto se haga una sola vez
  float salto=0;
- float base=0;
+ float base=0; 
  boolean y_inicial=false; //guarda las coordenadas de y al saltar
  boolean abajo=false;
- float a,b,c,d;
+ boolean moverse_derecha,moverse_izquierda;
  Dreamer(float xt, float yt){
    x=xt;
    y=yt;
-
-   
-   
  }
+ 
+ void mover_derecha(){
+   x+=vel;
+ }
+ void mover_izquierda(){
+   x-=vel;
+ } 
+ 
+ void saltar(){
+   if(tecla==true){
+     while(y_inicial==false){
+       salto=y-250; //altura del salto
+       base=y; //limite inferior del salto
+       y_inicial=true;
+     }
+     if (abajo==false){
+         if(abs(y)<abs(salto)){
+           y-=6;
+         }
+         else{
+           abajo=true;
+         }
+     }
+     if(abajo==true){
+       if(abs(y)>=abs(base)){
+         y+=6;
+         if(y==base){
+           y_inicial=false;
+           print("d");
+         }
+       }
+       else {
+         print("ss");
+         abajo=false;
+         tecla=false; //no salta más
+       }         
+     }
+   }
+   if(keyPressed==true){
+    tecla=true; 
+   }   
+ }
+ 
  
  void spawn(){
    float elapsedTime = (float) sw.getElapsedTime();
    S4P.updateSprites(elapsedTime);    
     pushMatrix();  
     translate(x,y);
-    Nix.draw();
+    Nix.draw(); 
     popMatrix();
 //---------------------------------Mov
+//Limites del personaje
 
-     if (keyCode==RIGHT || keyCode==LEFT){    
+   if (abs(y)-55<=150){  //Límtes del suelo  REVISAR
+    y=-80;    
+   }    
+   if (x>width+55){  //Límites de la pantalla horizontal TAL VEZ SE DEBA QUITAR
+    x=-55; 
+   }      
 
-       if (abs(y)-55<=150){  //Límtes del suelo
-        y=-80;    
-       }    
-       if (x>width+55){  //Límites de la pantalla horizontal TAL VEZ SE DEBA QUITAR
-        x=-55; 
-       }
-       
-       if(keyCode==RIGHT){
-        x+=vel;
-       }
-       if(keyCode==LEFT){
-        x-=vel;
-       }   
-       if(keyCode==UP){
-        y-=vel;
-       }
-       if(keyCode==DOWN){
-        y+=vel;
-       }        
-       
-     }
-
-     if(keyCode==BACKSPACE){
-       print("s");
-       if(tecla==true){
-         while(y_inicial==false){
-           salto=y-250; //altura del salto
-           base=y; //limite inferior del salto
-           y_inicial=true;
-         }
-         if (abajo==false){
-             if(abs(y)<abs(salto)){
-               y-=6;
-             }
-             else{
-               abajo=true;
-             }
-         }
-         if(abajo==true){
-           if(abs(y)>=abs(base)){
-             y+=6;
-             if(y==base){
-               y_inicial=false;
-               print("d");
-             }
-           }
-           else {
-             print("ss");
-             abajo=false;
-             tecla=false; //no salta más
-           }         
-         }
-       }
-       if(keyPressed==true){
-        tecla=true; 
-       }
-     }    
-     
+ 
  }
+ 
+ void lose(){
+   if(x<=Dragon.x){
+     inicial.modo=4;
+     inicial.pantalla_inicial_game_over=true;
+     x=300;
+     
+     
+   }
+   
+   
+ }
+ 
  
 }
 
@@ -241,11 +241,10 @@ class enemigo{
    pushMatrix();  
    translate(x,y);
    Sombra.draw();
-   popMatrix();     
    sprites.S4P.rebound(Nix,Sombra);
    sprites.S4P.collisionAreasVisible = true;   
-   print(Nix.pp_collision(Nix));  
-   
+   //print(Nix.pp_collision(Norman));     
+   popMatrix();     
 
 
  }
