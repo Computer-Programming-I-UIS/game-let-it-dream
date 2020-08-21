@@ -42,13 +42,23 @@ class pantalla{
          //suelo
          base.spawn();
          //Plataformas
+         pushMatrix();
+         translate(0,-height+40);
+         nivel_1.obtenerDatos();
+         nivel_1.crearEscenario(Entidad);
+         nivel_1.reinicio();
+         popMatrix();
+         
+         /*
          for(int i=0;i<plataforma.length;i++){
            plataforma[i].spawn_point(); 
            plataforma[i].move();
-         }
+         }         */
          //Jugador        
          Entidad.spawn();
          Entidad.lose();
+         Entidad.key_move();
+         Entidad.saltar();
          //Borrar
          Pesadilla.spawn();
          
@@ -64,7 +74,9 @@ class pantalla{
          Back.in();
          Back.spawn();     
          Entidad.spawn();
-         line(width/2,0,width/2,-height);
+         Entidad.key_move();
+         Entidad.saltar();
+         //line(width/2,0,width/2,-height);
          strokeJoin(ROUND);
          strokeWeight(5);
          tecla_arriba.in();

@@ -1,3 +1,5 @@
+//-----------------------------PLATAFORMAS-------------------------------------
+
 class plataformas{
   float x;
   float y;
@@ -20,7 +22,7 @@ class plataformas{
   void spawn_point(){
    fill (255); 
     rect(x,y,g,l);
-    }
+  }
  //------------------------------------------------------- 
   void move(){
     x-=3;
@@ -33,19 +35,7 @@ class plataformas{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+//-----------------------------SUELO-------------------------------------
 
 class suelo{
   float x;
@@ -62,31 +52,36 @@ class suelo{
   void spawn(){
     fill(0);
     rect(x,y,g,l);
-    
-    
   }
-  
 }
 
-
-
-
+//-----------------------------JUGADOR-------------------------------------
 
 class Dreamer{
  float x; 
  float y; 
- float vel=3; 
+ float vel=50; 
  boolean tecla=true; //para que el salto se haga una sola vez
- float salto=0;
- float base=0; 
- boolean y_inicial=false; //guarda las coordenadas de y al saltar
+ float base_x=0;
+ float base_y=0; 
+ float X;
+ int i=0; //Para guardar los estados de salto
+ boolean JUMP=false; //guarda las coordenadas de y al saltar
  boolean abajo=false;
  boolean moverse_derecha,moverse_izquierda;
+ boolean pulsar=false;
  Dreamer(float xt, float yt){
    x=xt;
    y=yt;
  }
- 
+ //-------------------------------------
+ void mover_arriba(){
+   y-=4;
+ } 
+ void mover_abajo(){
+   y+=4;
+ } 
+ //-----------------------------------------
  void mover_derecha(){
    x+=vel;
  }
@@ -95,41 +90,33 @@ class Dreamer{
  } 
  
  void saltar(){
-   if(tecla==true){
-     while(y_inicial==false){
-       salto=y-250; //altura del salto
-       base=y; //limite inferior del salto
-       y_inicial=true;
-     }
-     if (abajo==false){
-         if(abs(y)<abs(salto)){
-           y-=6;
-         }
-         else{
-           abajo=true;
-         }
-     }
-     if(abajo==true){
-       if(abs(y)>=abs(base)){
-         y+=6;
-         if(y==base){
-           y_inicial=false;
-           print("d");
+     if(JUMP==true){
+       
+       x+=3;
+       X+=3;
+       //print('L');
+       if(i<1){
+         
+         base_x=x;
+         X=1;
+         base_y=y;
+         i++;
+       }
+       if(x<base_x+100){
+         if(abs(y)<abs(base_y-100)){
+           y=(-(X*X)-80);
          }
        }
-       else {
-         print("ss");
-         abajo=false;
-         tecla=false; //no salta más
-       }         
+       else{
+         while(abs(round(y))>=abs(base_y)){
+           y+=1;
+         }
+         JUMP=false;
+       }
      }
-   }
-   if(keyPressed==true){
-    tecla=true; 
-   }   
  }
  
- 
+  
  void spawn(){
    float elapsedTime = (float) sw.getElapsedTime();
    S4P.updateSprites(elapsedTime);    
@@ -137,17 +124,15 @@ class Dreamer{
     translate(x,y);
     Nix.draw(); 
     popMatrix();
-//---------------------------------Mov
-//Limites del personaje
-
+    
+  //Limites del personaje                             QUITAR ESTOS COMENTARIOS
+  /*
    if (abs(y)-55<=150){  //Límtes del suelo  REVISAR
-    y=-80;    
-   }    
+     y=-80;    
+   } */    
    if (x>width+55){  //Límites de la pantalla horizontal TAL VEZ SE DEBA QUITAR
-    x=-55; 
+     x=500; 
    }      
-
- 
  }
  
  void lose(){
@@ -155,16 +140,50 @@ class Dreamer{
      inicial.modo=4;
      inicial.pantalla_inicial_game_over=true;
      x=300;
-     
-     
    }
-   
-   
  }
  
- 
-}
+ void key_move (){
+   if(pulsar!=false){
+     switch (key){
+         case 'D' :
+           Entidad.mover_derecha(); 
+         break;
+         case 'd' :
+           Entidad.mover_derecha(); 
+         break;        
+        
+         case 'A':
+           Entidad.mover_izquierda(); 
+         break;
+         case 'a':
+           Entidad.mover_izquierda();
+         break;        
+        
+         case 'W':
+           //JUMP=true;
+           //i=0;
+           Entidad.mover_arriba();
+         break;
+         case 'w':
+           //JUMP=true;
+           //i=0;
+           Entidad.mover_arriba();
+         break;
 
+         case 'S':
+           Entidad.mover_abajo();
+         break;
+         case 's':
+           Entidad.mover_abajo();
+         break;
+                
+         default:
+         break;       
+     }
+   }
+ }
+}
 
 class Monster{
  float x;
@@ -177,8 +196,7 @@ class Monster{
    x=xt;
    y=yt;
  }
- void move(){
-   
+ void move(){  
 //Movimiento del dragón por la pantalla
    if(arriba == false){
      if(abs(y)>=120){ //Límite inferior del dragón    
@@ -188,6 +206,7 @@ class Monster{
        arriba=true;
      }
    }
+   
    if (arriba==true){
      if(abs(y)<=height-40){ //Límite superior del dragón
        y-=random(2,4);
@@ -206,13 +225,10 @@ class Monster{
      }
      if(abs(y)<abs(ref_y)-30){
         y+=ref_y*vel;  
-     }   
-   
-     
-     
+     }
    }
-
  }
+ 
  void spawn(){
    float elapsedTime = (float) sw.getElapsedTime();
    S4P.updateSprites(elapsedTime);    
@@ -220,10 +236,7 @@ class Monster{
     translate(x,y);
     Norman.draw();
     popMatrix();     
-
- }
-  
-  
+ }  
 }
 
 
@@ -245,8 +258,5 @@ class enemigo{
    sprites.S4P.collisionAreasVisible = true;   
    //print(Nix.pp_collision(Norman));     
    popMatrix();     
-
-
- }
-  
+ }  
 }

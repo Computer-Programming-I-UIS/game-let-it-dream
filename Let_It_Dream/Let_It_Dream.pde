@@ -1,4 +1,5 @@
-
+//ACTIVAR EL SALTO, LOS LIMITES INFERIORES EN Y Y EN EL VOID KEY_MOVE DESCOMENTAR LOS SALTOS
+//NOTA: IMPORTANTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
 
 //Librerías para los sprites
@@ -10,11 +11,12 @@ import sprites.utils.*;
 Sprite Nix,Norman,Sombra;
 StopWatch sw = new StopWatch();
 //-----------------------------------
+//Personajes
 Dreamer Entidad;
 Monster Dragon;
 enemigo Pesadilla;
-
-
+//Niveles
+Escenario nivel_1;
 
 
 
@@ -45,7 +47,7 @@ void setup(){
  Credits = new boton((width/2)-75,(-height/2)+250,150,-50,3,"Credits",60,73); 
  Back = new boton(30,-30,100,-50,4,"Back",40,-6); 
  //-----------------------------------Juego-------------------------------------
- 
+ nivel_1=new Escenario(270,6,"nivel_1.txt");
  //--------------------------Entidades------------------------------
  
 
@@ -69,7 +71,6 @@ void setup(){
  for(int i=0 ;i<plataforma.length;i++ ){
  plataforma[i]= new plataformas();  
  }
-
 }
 
 void draw(){
@@ -78,80 +79,24 @@ void draw(){
  background(30);
  //Para cambiar de pantalla en pantalla
  inicial.apartado();
-  
-  //print(keyCode);
+}
 
-  
-  if(Entidad.moverse_derecha==true){
-    Entidad.mover_derecha(); 
-    print("Mueve");
+
+void keyReleased(){
+  if(keyPressed==false){
+    Entidad.pulsar=false;
   }
   else{
-    print("NO");
-  }
-  if(Entidad.moverse_izquierda==true){
-    Entidad.mover_izquierda(); 
-  }      
-}
-
+    Entidad.pulsar=true;
+  }   
+} 
 
 void keyPressed() {
-  if(key==CODED){
-    key_move(keyCode, true);
+  if(keyPressed==true){
+    Entidad.pulsar=true;
   }
-  if(key!=CODED){
-    key_move(key, true);
-  }    
-  
+  else{
+    Entidad.pulsar=false;
+  }     
 } 
-void keyReleased(){
-  if(key==CODED){
-    key_move(keyCode, false);
-  }
-  if(key!=CODED){
-    key_move(key, false);
-  }   
-  
-} 
-
-void key_move(int boton, boolean pulsar){
-  if(pulsar==true){
-    switch (boton){
-        case 'D' :
-        Entidad.moverse_derecha=pulsar;
-        break;
-        case 'd' :
-        Entidad.moverse_derecha=pulsar;
-        break;        
-        
-        case 'A':
-        Entidad.moverse_izquierda=pulsar;
-        break;
-        case 'a':
-        Entidad.moverse_izquierda=pulsar;
-        break;        
-        
-        case 'W':
-        Entidad.saltar();
-        break;
-        case 'w':
-        Entidad.saltar();
-        break;
-        
-        default:
-        break;       
-    }
-  }
-}
-
-
-/*
-   if(key=='D'||key=='d' || keyCode==RIGHT){ //baja
-     Entidad.mover_derecha();
-   }
-   if(keyCode==LEFT || key=='A' || key=='a'){ //sube
-     Entidad.mover_izquierda();
-   }
-  if(keyCode==UP||key=='w' || key=='W' || keyCode==BACKSPACE){ //sube
-     Entidad.saltar();
-   }      */
+ 
