@@ -43,27 +43,30 @@ translate(-v,0);
        rect(j*60,i*160,60,30); 
        J=j;
        I=i;
-  //       println("Entidad:  "+abs(Entidad.x));
-       //  println("Barra  :  "+abs((i*L)-height));       
 
        if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
          if((abs(Entidad.y)+2)<abs((i*L)-height) && (abs(Entidad.y)+2)>(abs((i*L)-height)-30)){
-             Entidad.y-=8;        
+             Entidad.y-=Entidad.vel_y;        
              Entidad.x-=4;
+             Entidad.fall=false;
+             
+           }
+           else{
+             Entidad.fall=true;
            }
        }    
        
        
        if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
          if((abs(Entidad.y)+90)<abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30)){             
-             Entidad.y+=8;   
+             Entidad.y+=(Entidad.vel_y-2);   
              Entidad.x-=4;
            }
        }        
        
        if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
          if((abs(Entidad.y)+90)>abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30) && (abs(Entidad.y)+2)<abs((i*L)-height) && (abs(Entidad.y)+2)<(abs((i*L)-height)-30)){             
-             Entidad.y+=8;   
+             Entidad.y+=(Entidad.vel_y+14);   
              Entidad.x-=4;
            }
        }          
@@ -72,7 +75,6 @@ translate(-v,0);
       }
      }
    }
-//
   }
   
   void reinicio(){    

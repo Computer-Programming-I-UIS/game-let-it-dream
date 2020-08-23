@@ -23,7 +23,6 @@ Escenario nivel_1;
 PImage title, fondo,game_over; //se declara la imagen a utilizar
 pantalla inicial;
 boton Start,Controls,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
-plataformas[] plataforma= new plataformas[10];  //REVISAR SI SE PUEDE LO DEL ARCHIVO DEL TEXTO
 suelo base;
 void setup(){
  size(1280,720,P2D);
@@ -38,7 +37,7 @@ void setup(){
  pantalloide.setFrameSequence(0,3,0.3); 
  
  
- inicial = new pantalla(6); //EL 0 ES DE LA PAN
+ inicial = new pantalla(2); //EL 0 ES DE LA PAN
  //-----------------------------Botones-----------------------------------
  Start = new boton((width/2)-75,(-height/2)+100,150,-50,1,"Start",37,227); //(ubicacion x, y, grosor, largo, que tipo de boton es, nombre, posicion del texto x, y)
  Controls = new boton((width/2)-75,(-height/2)+175,150,-50,2,"Controls",71,152);
@@ -85,9 +84,6 @@ void setup(){
  //----------------------------------Suelo-----------------------------------------
  base = new suelo(-5,-5,width+10,-50); //En y se debe ajustar con lios límites de las barras por abajo
  //--------------------------------Plataformas-----------------------------------
- for(int i=0 ;i<plataforma.length;i++ ){
- plataforma[i]= new plataformas();  
- }
 }
 
 void draw(){
