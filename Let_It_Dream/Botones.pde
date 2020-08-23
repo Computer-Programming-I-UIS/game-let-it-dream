@@ -4,7 +4,7 @@ class boton{
   int tipo;  //Tipo de botón que se va a utilizar 
   String name;
   float x1,y1; //Para ajustar los textos a cada botón
-  
+  int FRAME;
   boton(float xt, float yt, float gt, float lt, int tipot, String namet, float x1t, float y1t){
     x=xt;
     y=yt;
@@ -18,7 +18,7 @@ class boton{
   
   void in(){
     C=mouseY-height;
-    
+    FRAME=frameCount%80;
     switch(tipo){
 //--------------------------------------------------------------------------PANTALLA INICIAL--------------------------------------------------------------------------------------------------
 
@@ -106,6 +106,12 @@ class boton{
     break;
 //------------------------------------------------------------------------------------BOTONES EN LA PANTALLA DE CONTROLES------------------------------------------------------------------
     case 6:
+      if(FRAME<=40){
+        text("Up",(x-(x1+5))+(g/2),(-height/2)-200);
+      }
+      else{
+        text("Up",(x-(x1+5))+(g/2),(-height/2)-207);
+      }
       noStroke();
       stroke(255);
       if(keyPressed==true){
@@ -121,6 +127,12 @@ class boton{
     break;
 
     case 7:
+      if(FRAME<=40){
+        text("Left",(x-(x1+20))+(g/2),(-height/2)-100);
+      }
+      else{
+        text("Left",(x-(x1+20))+(g/2),(-height/2)-107);
+      }    
       noStroke();
       stroke(255);
       if(keyPressed==true){
@@ -151,6 +163,12 @@ class boton{
     break;
     
     case 9:
+      if(FRAME<=40){
+        text("Right",(x-(x1+25))+(g/2),(-height/2)-100);
+      }
+      else{
+        text("Right",(x-(x1+25))+(g/2),(-height/2)-107);
+      }     
       noStroke();
       stroke(255);
       if(keyPressed==true){

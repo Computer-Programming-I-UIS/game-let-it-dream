@@ -8,7 +8,7 @@ import sprites.maths.*;
 import sprites.utils.*;
 //----------------------------
 //Ajustes para las entidades
-Sprite Nix,Norman,Sombra;
+Sprite Nix,Nix_salto,Nix_izquierda,Nix_Base_Right,Nix_Base_Left,Norman,Sombra,pantalloide;
 StopWatch sw = new StopWatch();
 //-----------------------------------
 //Personajes
@@ -33,7 +33,12 @@ void setup(){
  fondo = loadImage("Sky_2.png");
  game_over= loadImage("Final.png");
  //------------------------------Pantalla de inicio----------------------------------------
- inicial = new pantalla(0); //EL 0 ES DE LA PAN
+ 
+ pantalloide=new Sprite(this,"Imagencrack2.png",2,2,0);
+ pantalloide.setFrameSequence(0,3,0.3); 
+ 
+ 
+ inicial = new pantalla(6); //EL 0 ES DE LA PAN
  //-----------------------------Botones-----------------------------------
  Start = new boton((width/2)-75,(-height/2)+100,150,-50,1,"Start",37,227); //(ubicacion x, y, grosor, largo, que tipo de boton es, nombre, posicion del texto x, y)
  Controls = new boton((width/2)-75,(-height/2)+175,150,-50,2,"Controls",71,152);
@@ -47,7 +52,7 @@ void setup(){
  Credits = new boton((width/2)-75,(-height/2)+250,150,-50,3,"Credits",60,73); 
  Back = new boton(30,-30,100,-50,4,"Back",40,-6); 
  //-----------------------------------Juego-------------------------------------
- nivel_1=new Escenario(270,6,"nivel_1.txt");
+ nivel_1=new Escenario(270,5,"nivel_1.txt");
  //--------------------------Entidades------------------------------
  
 
@@ -55,9 +60,21 @@ void setup(){
   Norman.setFrameSequence(0, 3, 0.3);
   Dragon= new Monster(125,-360);
   
+  Nix_Base_Right=new Sprite(this,"Nix_Base.png", 3, 2,0); //110X110 //DERECHA
+  Nix_Base_Right.setFrameSequence(0, 5, 0.2);
   
-  Nix=new Sprite(this,"Nix_2.png", 5, 5,0); //110X110
+  Nix_Base_Left=new Sprite(this,"Nix_Base_.png", 3, 2,0); //110X110 //DERECHA
+  Nix_Base_Left.setFrameSequence(0, 5, 0.2);
+  
+  Nix=new Sprite(this,"Nix_2.png", 5, 5,0); //110X110 //DERECHA
   Nix.setFrameSequence(0, 7, 0.2);
+  
+  Nix_izquierda=new Sprite(this,"Nix_.png", 5, 5,0); //110X110  //SALTAR
+  Nix_izquierda.setFrameSequence(0, 7, 0.2);
+  
+  Nix_salto=new Sprite(this,"Nix_2.png", 5, 5,0); //110X110  //IZQUIERDA
+  Nix_salto.setFrameSequence(9, 19, 0.2);  
+  
   Entidad= new Dreamer(500,-80); //110x110
   
   Sombra=new Sprite(this,"Missigno.png", 1, 2,0); //110X110
@@ -85,6 +102,14 @@ void draw(){
 void keyReleased(){
   if(keyPressed==false){
     Entidad.pulsar=false;
+
+    if(Entidad.sentido==1){
+      Entidad.sentido=4;      
+    }
+    if(Entidad.sentido==2){
+      Entidad.sentido=5;      
+    }   
+
   }
   else{
     Entidad.pulsar=true;
@@ -96,7 +121,7 @@ void keyPressed() {
     Entidad.pulsar=true;
   }
   else{
-    Entidad.pulsar=false;
+    Entidad.pulsar=false; 
   }     
 } 
  

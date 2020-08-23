@@ -1,6 +1,5 @@
 class pantalla{
   int modo=0;
-  boolean pantalla_inicial_game_over=false;
   //Para los créditos
   float t_texto;
   String nombres;
@@ -13,15 +12,11 @@ class pantalla{
    void apartado(){
      switch(modo){
        case 0:  //PANTALLA INICIAL
-         if(pantalla_inicial_game_over==false){
-           image(title,10,-height+200);
-         }
-         else{       
-           pushMatrix();
-           translate(width/2,-height+275);
-           image(title,10,0); 
-           popMatrix();  
-         }
+     
+         pushMatrix();
+         translate(width/2,-height+275);
+         image(title,10,0); 
+         popMatrix();  
          //stroke(255);
          //line(width/2,0,width/2,-height);        
          Start.in();
@@ -60,7 +55,7 @@ class pantalla{
          Entidad.key_move();
          Entidad.saltar();
          //Borrar
-         Pesadilla.spawn();
+         
          
          
          Dragon.spawn();
@@ -87,7 +82,6 @@ class pantalla{
          tecla_derecha.spawn();
          tecla_izquierda.in();
          tecla_izquierda.spawn();
-         pantalla_inicial_game_over=true;
          stroke(0);
        break;
        
@@ -126,6 +120,37 @@ class pantalla{
          Back.in();
          Back.spawn();       
        break;   
+       
+       case 5:             //PANTALLA DE FIN DEL NIVEL
+       
+       
+       break; 
+       
+       case 6: //PANTALLA CON LA FRASE INICIAL
+       float elapsedTime = (float) sw.getElapsedTime();
+       S4P.updateSprites(elapsedTime);    
+       pushMatrix();  
+       translate(width/2,-height/2);
+       pantalloide.draw(); 
+       popMatrix();
+       Back.in();
+       Back.spawn();
+       break;
+       
+       case 7: //IMAGEN DE LA HISTORIA
+       
+       break;       
+       
+       case 8: //FRASES CONTEXTUALIZADORAS
+       
+       break;       
+       
+       
+       
+       
+       
+       
+       
        
        default:       
        break;

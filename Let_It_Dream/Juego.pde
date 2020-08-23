@@ -60,13 +60,15 @@ class suelo{
 class Dreamer{
  float x; 
  float y; 
- float vel=20; 
+ int sentido=5;
+ float vel=4; 
  boolean tecla=true; //para que el salto se haga una sola vez
  float base_x=0;
  float base_y=0; 
  float X;
  int i=0; //Para guardar los estados de salto
- boolean JUMP=false; //guarda las coordenadas de y al saltar
+ boolean JUMP_RIGHT=false; //guarda las coordenadas de y al saltar
+ boolean JUMP_LEFT=false; //guarda las coordenadas de y al saltar
  boolean abajo=false;
  boolean moverse_derecha,moverse_izquierda;
  boolean pulsar=false;
@@ -76,10 +78,10 @@ class Dreamer{
  }
  //-------------------------------------
  void mover_arriba(){
-   y-=4;
+   y-=8;
  } 
  void mover_abajo(){
-   y+=4;
+   y+=8;
  } 
  //-----------------------------------------
  void mover_derecha(){
@@ -90,8 +92,7 @@ class Dreamer{
  } 
  
  void saltar(){
-     if(JUMP==true){
-       
+     if(JUMP_RIGHT==true){      
        x+=3;
        X+=3;
        //print('L');
@@ -111,9 +112,34 @@ class Dreamer{
          while(abs(round(y))>=abs(base_y)){
            y+=1;
          }
-         JUMP=false;
+         JUMP_RIGHT=false;
        }
      }
+     
+     if(JUMP_LEFT==true){      
+       x-=3;
+       X-=3;
+       //print('L');
+       if(i<1){
+         
+         base_x=x;
+         X=1;
+         base_y=y;
+         i++;
+       }
+       if(x>base_x-100){
+         if(abs(y)<abs(base_y-100)){
+           y=(-(X*X)-80);
+         }
+       }
+       else{
+         while(abs(round(y))>=abs(base_y)){
+           y+=1;
+         }
+         JUMP_LEFT=false;
+       }
+     }     
+     
  }
  
   
@@ -122,7 +148,30 @@ class Dreamer{
    S4P.updateSprites(elapsedTime);    
     pushMatrix();  
     translate(x,y);
-    Nix.draw(); 
+    switch(sentido){
+      case 1:
+      Nix_izquierda.draw();
+      break;
+      
+      case 2:
+      Nix.draw();
+      break;
+      
+      case 3:
+      Nix_salto.draw();
+      break;
+      
+      case 4:
+      Nix_Base_Left.draw();
+      break;
+      
+      case 5:
+      Nix_Base_Right.draw();
+      break;      
+      
+      default:
+      break;
+    }
     popMatrix();
     
   //Limites del personaje                             QUITAR ESTOS COMENTARIOS
@@ -138,7 +187,6 @@ class Dreamer{
  void lose(){
    if(x<=Dragon.x){
      inicial.modo=4;
-     inicial.pantalla_inicial_game_over=true;
      x=300;
    }
  }
@@ -147,27 +195,46 @@ class Dreamer{
    if(pulsar!=false){
      switch (key){
          case 'D' :
+           sentido=2;
            Entidad.mover_derecha(); 
          break;
          case 'd' :
+           sentido=2;
            Entidad.mover_derecha(); 
          break;        
         
          case 'A':
+           sentido=1;
            Entidad.mover_izquierda(); 
          break;
          case 'a':
+           sentido=1;
            Entidad.mover_izquierda();
          break;        
         
          case 'W':
-           //JUMP=true;
-           //i=0;
-           Entidad.mover_arriba();
+         if(sentido==2 || sentido==5){
+           sentido=3;
+           JUMP_RIGHT=true;
+         }
+         if(sentido==1 || sentido==4){
+           sentido=3;
+           JUMP_LEFT=true;
+         }  
+           i=0;
+           //Entidad.mover_arriba();
          break;
          case 'w':
-           //JUMP=true;
-           //i=0;
+         /*
+         if(sentido==2 || sentido==5){
+           sentido=3;
+           JUMP_RIGHT=true;
+         }
+         if(sentido==1 || sentido==4){
+           sentido=3;
+           JUMP_LEFT=true;
+         }         
+           i=0;                        */
            Entidad.mover_arriba();
          break;
 
