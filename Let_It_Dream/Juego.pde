@@ -60,7 +60,7 @@ class suelo{
 class Dreamer{
  float x; 
  float y; 
- float vel=50; 
+ float vel=20; 
  boolean tecla=true; //para que el salto se haga una sola vez
  float base_x=0;
  float base_y=0; 

@@ -64,7 +64,7 @@ class pantalla{
          
          
          Dragon.spawn();
-         //  Dragon.move();
+         Dragon.move();
          
        break;
        

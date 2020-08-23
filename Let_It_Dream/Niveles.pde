@@ -7,7 +7,7 @@ class Escenario {
   String filename;
   int A=60; //Ancho de las barras
   int L=160; //Distancia en y entre las barras
-
+  int v=0;
   Escenario(int _cols,int _rows, String _filename){
     cols= _cols;
     rows= _rows;
@@ -62,7 +62,25 @@ class Escenario {
    }
 } */
 //t=0;
+v+=8;
+Entidad.x-=8;
+translate(-v,0);
+    for (int i=0; i<rows;i++){
+     for(int j=0; j<n;j++){
+      if(escenario[j][i]== 'M'){
+       stroke(255);
+       strokeWeight(5);
+       fill(20,242,240);
+       rect(j*60,i*160,100,30); 
+      }
+     }
+   }
+// if(Entidad.x>=800){
+//translate(-500,0);
+//}
 
+
+/*
 if(Entidad.x>=width-100){
   t++;
   Entidad.x=500;
@@ -264,7 +282,7 @@ break;
    
    default:
    break;
-}
+} */
   }
   
   void reinicio(){    
