@@ -139,6 +139,9 @@ class pantalla{
         gulag.obtenerDatos2();
         gulag.crearEscenario2(); 
         popMatrix();
+        if(Entidad.y>=50){
+         modo=4; 
+        }
         if(Entidad.x<=200 && Entidad.x>=100 && Entidad.y<=-500 && Entidad.y>=-630){
           modo=1;
           Entidad.x=width/2;
