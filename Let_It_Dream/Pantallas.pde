@@ -6,6 +6,7 @@ class pantalla{
   float yt=height; //x y y del texto  
   float xt=4.5;
   int C;
+  int H,G;
   pantalla (int modot){
   modo = modot;  
   }
@@ -43,7 +44,7 @@ class pantalla{
          nivel_1.crearEscenario(Entidad);
          nivel_1.reinicio();
          popMatrix();
-         
+         Entidad.pausa=true;
          /*
          for(int i=0;i<plataforma.length;i++){
            plataforma[i].spawn_point(); 
@@ -121,12 +122,30 @@ class pantalla{
          Back.spawn();       
        break;   
        
-       case 5:             //PANTALLA DE FIN DEL NIVEL
-       
-       
+       case 5:        //GULAG
+       pushMatrix();
+       translate(width/2,height/2);
+       image(GULAG,0,-height); 
+       popMatrix();       
+       Entidad.pausa=false;
+       nivel_1.v=Entidad.V;
+        Entidad.spawn();
+       // Entidad.lose();
+        Entidad.key_move();
+        Entidad.saltar();
+        rect(100,-630,100,130);
+        pushMatrix();
+        translate(0,-height+40);
+        gulag.obtenerDatos2();
+        gulag.crearEscenario2(); 
+        popMatrix();
+        if(Entidad.x<=200 && Entidad.x>=100 && Entidad.y<=-500 && Entidad.y>=-630){
+          modo=1;
+          Entidad.x=width/2;
+        }
        break; 
        
-       case 6: //PANTALLA CON LA FRASE INICIAL
+       case 6: //PANTALLA DE LA HISTORIA
        float elapsedTime = (float) sw.getElapsedTime();
        S4P.updateSprites(elapsedTime);    
        pushMatrix();  
@@ -138,7 +157,7 @@ class pantalla{
        break;
        
        case 7: //IMAGEN DE LA HISTORIA
-       
+             
        break;       
        
        case 8: //FRASES CONTEXTUALIZADORAS

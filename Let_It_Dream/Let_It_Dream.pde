@@ -16,11 +16,11 @@ Dreamer Entidad;
 Monster Dragon;
 enemigo Pesadilla;
 //Niveles
-Escenario nivel_1;
+Escenario nivel_1,gulag;
 
 
 
-PImage title, fondo,game_over; //se declara la imagen a utilizar
+PImage title, fondo,game_over,GULAG; //se declara la imagen a utilizar
 pantalla inicial;
 boton Start,Controls,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
 suelo base;
@@ -31,6 +31,7 @@ void setup(){
  title = loadImage("titulo_b.png"); //Título
  fondo = loadImage("Sky_2.png");
  game_over= loadImage("Final.png");
+ GULAG=loadImage("Final_Gulag.png");
  //------------------------------Pantalla de inicio----------------------------------------
  
  pantalloide=new Sprite(this,"Imagencrack2.png",2,2,0);
@@ -52,6 +53,7 @@ void setup(){
  Back = new boton(30,-30,100,-50,4,"Back",40,-6); 
  //-----------------------------------Juego-------------------------------------
  nivel_1=new Escenario(270,5,"nivel_1.txt");
+ gulag=new Escenario(30,5,"gulag.txt");
  //--------------------------Entidades------------------------------
  
 

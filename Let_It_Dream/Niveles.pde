@@ -29,9 +29,11 @@ class Escenario {
   }
   
   void crearEscenario(Dreamer Entidad){
+//if(Entidad.y<=0){
+  //Entidad.y=-500;
 
 v+=4; //8
-Entidad.x-=0;
+Entidad.x-=0;//8
 translate(-v,0);
     for (int i=0; i<rows;i++){
      for(int j=0; j<n;j++){
@@ -71,12 +73,73 @@ translate(-v,0);
              Entidad.y+=(Entidad.vel_y+14);   
              Entidad.x-=4;
            }
-       }          
+       }
+     //  if(Entidad.x>=240*60){
+    //    inicial.modo=7; 
+         
+   //    }
        
        
       }
      }
    }
+//}
+//else {
+ //Entidad.y=-500; 
+ 
+//}
+  }
+  void obtenerDatos2(){
+        String[] lines = loadStrings(filename);
+    for(int i=0; i< lines.length;i++){
+      for(int j=0;j<20;j++){
+        escenario[j][i] = lines[i].charAt(j);
+      }
+    }
+  }
+  void crearEscenario2(){
+        for (int i=0; i<rows;i++){
+     for(int j=0; j<20;j++){
+      if(escenario[j][i]== 'T'){
+       stroke(255);
+       strokeWeight(5);
+       fill(20,242,240);
+       line(j*A,i*L,width,i*L);
+       rect(j*60,i*160,60,30); 
+        J=j;
+       I=i;
+
+       if((abs(Entidad.x+25)>=abs((j*A)) && abs(Entidad.x+25)<=abs(((j*A)+60))) || ((Entidad.x-25)>=abs((j*A)) && (Entidad.x-25)<=abs(((j*A)+60)))  ){
+         if((abs(Entidad.y)+2)<abs((i*L)-height) && (abs(Entidad.y)+2)>(abs((i*L)-height)-30)){
+             Entidad.y-=Entidad.vel_y;        
+           //  Entidad.x-=4;
+             Entidad.fall=false;
+             
+           }
+           else{
+             Entidad.fall=true;
+           }
+       }    
+       
+       
+       if((abs(Entidad.x+25)>=abs((j*A)) && abs(Entidad.x+25)<=abs(((j*A)+60))) || ((Entidad.x-25)>=abs((j*A)) && (Entidad.x-25)<=abs(((j*A)+60)))  ){
+         if((abs(Entidad.y)+90)<abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30)){             
+             Entidad.y+=(Entidad.vel_y-2);   
+            // Entidad.x-=4;
+             Entidad.JUMP_RIGHT=false;
+             Entidad.JUMP_LEFT=false;
+           }
+       }        
+       
+       if((abs(Entidad.x+25)>=abs((j*A)) && abs(Entidad.x+25)<=abs(((j*A)+60))) || ((Entidad.x-25)>=abs((j*A)) && (Entidad.x-25)<=abs(((j*A)+60)))  ){
+         if((abs(Entidad.y)+90)>abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30) && (abs(Entidad.y)+2)<abs((i*L)-height) && (abs(Entidad.y)+2)<(abs((i*L)-height)-30)){             
+             Entidad.y+=(Entidad.vel_y+14);   
+             //Entidad.x-=4;
+           }
+       }          
+      }
+     }
+        }
   }
   
   void reinicio(){    

@@ -25,8 +25,8 @@ class Dreamer{
  float x; 
  float y; 
  int sentido=5;
- float vel_x=4;
- float vel_y=8;
+ float vel_x=20;//4
+ float vel_y=20;//8
  boolean tecla=true; //para que el salto se haga una sola vez
  float base_x=0;
  float base_y=0; 
@@ -38,6 +38,8 @@ class Dreamer{
  boolean fall=true;
  boolean moverse_derecha,moverse_izquierda;
  boolean pulsar=false;
+ int V;
+ boolean pausa=true;
  Dreamer(float xt, float yt){
    x=xt;
    y=yt;
@@ -71,7 +73,19 @@ class Dreamer{
        y+=vel_y;
      }     
    }
-
+if(y>100){
+ inicial.modo=5; 
+  y=-150;
+  x=850;
+}
+else{
+  if(pausa==true){
+    V=nivel_1.v;    
+  }
+  else{
+  nivel_1.v+=4;  
+  }
+}
      if(JUMP_RIGHT==true){      
        x+=vel_x;
        if(i<1){
