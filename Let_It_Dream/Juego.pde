@@ -58,11 +58,20 @@ class Dreamer{
  } 
  
  void saltar(){
-   if(fall==true){
-     if(abs(y)>=82){
-       //y+=vel_y;
-     }
+   if(abs(y)>700){
+     y+=vel_y-2;
    }
+   if(fall==true){
+     if(inicial.modo==2){
+       if(abs(y)>=82){
+         y+=vel_y;
+       } 
+     }
+     else{
+       y+=vel_y;
+     }     
+   }
+
      if(JUMP_RIGHT==true){      
        x+=vel_x;
        if(i<1){
@@ -80,7 +89,8 @@ class Dreamer{
          i--;
        }
      }
-     
+  
+       
      if(JUMP_LEFT==true){      
        x-=vel_x;
        if(i<1){      
@@ -179,7 +189,7 @@ class Dreamer{
          if(sentido==1 || sentido==4){
            sentido=3;
            JUMP_LEFT=true;
-         }  
+         } 
            i=0;
            //Entidad.mover_arriba();
          break;

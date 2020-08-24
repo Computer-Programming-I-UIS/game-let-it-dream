@@ -61,6 +61,8 @@ translate(-v,0);
          if((abs(Entidad.y)+90)<abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30)){             
              Entidad.y+=(Entidad.vel_y-2);   
              Entidad.x-=4;
+             Entidad.JUMP_RIGHT=false;
+             Entidad.JUMP_LEFT=false;
            }
        }        
        
