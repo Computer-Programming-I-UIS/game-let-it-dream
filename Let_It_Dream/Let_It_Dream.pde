@@ -16,7 +16,7 @@ Dreamer Entidad;
 Monster Dragon;
 enemigo Pesadilla;
 //Niveles
-Escenario nivel_1;
+Escenario nivel_1,gulag;
 
 
 
@@ -52,6 +52,7 @@ void setup(){
  Back = new boton(30,-30,100,-50,4,"Back",40,-6); 
  //-----------------------------------Juego-------------------------------------
  nivel_1=new Escenario(270,5,"nivel_1.txt");
+ gulag=new Escenario(30,5,"gulag.txt");
  //--------------------------Entidades------------------------------
  
 
