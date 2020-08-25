@@ -182,12 +182,51 @@ class boton{
          } 
       }    
     break;    
-//-----------------------------------------------------------------------------------BOTONES EN LA PANTALLA DE CRÉDITOS--------------------------------------------------------------------
+//-----------------------------------------------------------------------INICIO-------------------------
+      case 10: //LLEVA A LA PANTALLA DE LAS FRASES
+      noStroke();
+      if(mouseX>=x && mouseX<=x+g ){  //PARA EVALUAR SI ESTÁ DENTRO DE LA BARRA
+       if(abs(C)<=(abs(l)+abs(y)) && abs(C)>=abs(y)){
+           strokeWeight(2);
+           stroke(255);
+         if (mousePressed==true){
+           inicial.modo=7; //CAMBIAR
+           Entidad.x=500;
+           Entidad.y=-80;
+           //FUNCIONALIDADES (ESTABLECER UN ESTADO O ALGO PARA INICIAR EL JUEGO)
+         }
+       }
+      }
+      else{
+         strokeWeight(1);
+         stroke(0);        
+      }    
+      break;          
 
-
+      case 11: //LLEVA A LA PANTALLA DE LAS FRASES
+      noStroke();
+      if(mouseX>=x && mouseX<=x+g ){  //PARA EVALUAR SI ESTÁ DENTRO DE LA BARRA
+       if(abs(C)<=(abs(l)+abs(y)) && abs(C)>=abs(y)){
+           strokeWeight(2);
+           stroke(255);
+         if (mousePressed==true){
+           inicial.modo=8; //CAMBIAR
+           Entidad.x=500;
+           Entidad.y=-80;
+           //FUNCIONALIDADES (ESTABLECER UN ESTADO O ALGO PARA INICIAR EL JUEGO)
+         }
+       }
+      }
+      else{
+         strokeWeight(1);
+         stroke(0);        
+      }    
+      break; 
+      
       default:
-      break;     
+      break;        
     }
+   
     
   }
   

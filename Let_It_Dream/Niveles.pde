@@ -11,7 +11,6 @@ class Escenario {
   int v=0;
   float X;
   float F;
-  int J,I;
   Escenario(int _cols,int _rows, String _filename){
     cols= _cols;
     rows= _rows;
@@ -29,66 +28,57 @@ class Escenario {
   }
   
   void crearEscenario(Dreamer Entidad){
-//if(Entidad.y<=0){
-  //Entidad.y=-500;
 
-v+=4; //8
-Entidad.x-=0;//8
-translate(-v,0);
-    for (int i=0; i<rows;i++){
-     for(int j=0; j<n;j++){
-      if(escenario[j][i]== 'M'){
-       stroke(255);
-       strokeWeight(5);
-       fill(20,242,240);
-       line(j*A,i*L,width,i*L);
-       rect(j*60,i*160,60,30); 
-       J=j;
-       I=i;
 
-       if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
-         if((abs(Entidad.y)+2)<abs((i*L)-height) && (abs(Entidad.y)+2)>(abs((i*L)-height)-30)){
-             Entidad.y-=Entidad.vel_y;        
-             Entidad.x-=4;
-             Entidad.fall=false;
-             
+  translate(-v,0);
+  fill(255);
+  rect(14250,720,1280,-800);
+  if(v<=13370){
+    v+=8; //8   
+    Entidad.x-=8;//8
+  }
+  if((Entidad.x+v)>=14250){
+   inicial.modo=9; 
+  }  
+  
+      for (int i=0; i<rows;i++){
+       for(int j=0; j<n;j++){
+        if(escenario[j][i]== 'M'){
+         stroke(255);
+         strokeWeight(5);
+         fill(22,54,54);
+         rect(j*A,i*L,60,30); 
+  
+         if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
+           if((abs(Entidad.y)+1)<abs((i*L)-height) && (abs(Entidad.y)+1)>(abs((i*L)-height)-30)){
+               Entidad.y-=Entidad.vel_y;        
+               Entidad.fall=false;
            }
            else{
              Entidad.fall=true;
            }
-       }    
-       
-       
-       if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
-         if((abs(Entidad.y)+90)<abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30)){             
-             Entidad.y+=(Entidad.vel_y-2);   
-             Entidad.x-=4;
-             Entidad.JUMP_RIGHT=false;
-             Entidad.JUMP_LEFT=false;
-           }
-       }        
-       
-       if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
-         if((abs(Entidad.y)+90)>abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30) && (abs(Entidad.y)+2)<abs((i*L)-height) && (abs(Entidad.y)+2)<(abs((i*L)-height)-30)){             
-             Entidad.y+=(Entidad.vel_y+14);   
-             Entidad.x-=4;
-           }
-       }
-     //  if(Entidad.x>=240*60){
-    //    inicial.modo=7; 
+         }    
+          
+         if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
+           if((abs(Entidad.y)+90)<abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30)){             
+               Entidad.y+=(Entidad.vel_y-2);   
+               Entidad.JUMP_RIGHT=false;
+               Entidad.JUMP_LEFT=false;
+             }
+         }        
          
-   //    }
-       
-       
-      }
+         if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
+           if((abs(Entidad.y)+90)>abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30) && (abs(Entidad.y)+2)<abs((i*L)-height) && (abs(Entidad.y)+2)<(abs((i*L)-height)-30)){             
+               Entidad.y+=(Entidad.vel_y+14);   
+           }
+         }
+          
+        }
+       }
      }
-   }
-//}
-//else {
- //Entidad.y=-500; 
- 
-//}
   }
+  
+  
   void obtenerDatos2(){
         String[] lines = loadStrings(filename);
     for(int i=0; i< lines.length;i++){
@@ -97,24 +87,19 @@ translate(-v,0);
       }
     }
   }
-  void crearEscenario2(){
-        for (int i=0; i<rows;i++){
+  void crearEscenario2(){   
+    for (int i=0; i<rows;i++){
      for(int j=0; j<20;j++){
       if(escenario[j][i]== 'T'){
-       stroke(255);
+       stroke(170,170,170);
        strokeWeight(5);
-       fill(20,242,240);
-       line(j*A,i*L,width,i*L);
+       fill(209,34,34);
        rect(j*60,i*160,60,30); 
-        J=j;
-       I=i;
 
        if((abs(Entidad.x+25)>=abs((j*A)) && abs(Entidad.x+25)<=abs(((j*A)+60))) || ((Entidad.x-25)>=abs((j*A)) && (Entidad.x-25)<=abs(((j*A)+60)))  ){
-         if((abs(Entidad.y)+2)<abs((i*L)-height) && (abs(Entidad.y)+2)>(abs((i*L)-height)-30)){
+         if((abs(Entidad.y)+1)<abs((i*L)-height) && (abs(Entidad.y)+1)>(abs((i*L)-height)-30)){
              Entidad.y-=Entidad.vel_y;        
-           //  Entidad.x-=4;
              Entidad.fall=false;
-             
            }
            else{
              Entidad.fall=true;
@@ -125,7 +110,6 @@ translate(-v,0);
        if((abs(Entidad.x+25)>=abs((j*A)) && abs(Entidad.x+25)<=abs(((j*A)+60))) || ((Entidad.x-25)>=abs((j*A)) && (Entidad.x-25)<=abs(((j*A)+60)))  ){
          if((abs(Entidad.y)+90)<abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30)){             
              Entidad.y+=(Entidad.vel_y-2);   
-            // Entidad.x-=4;
              Entidad.JUMP_RIGHT=false;
              Entidad.JUMP_LEFT=false;
            }
@@ -134,12 +118,11 @@ translate(-v,0);
        if((abs(Entidad.x+25)>=abs((j*A)) && abs(Entidad.x+25)<=abs(((j*A)+60))) || ((Entidad.x-25)>=abs((j*A)) && (Entidad.x-25)<=abs(((j*A)+60)))  ){
          if((abs(Entidad.y)+90)>abs((i*L)-height) && (abs(Entidad.y)+90)>(abs((i*L)-height)-30) && (abs(Entidad.y)+2)<abs((i*L)-height) && (abs(Entidad.y)+2)<(abs((i*L)-height)-30)){             
              Entidad.y+=(Entidad.vel_y+14);   
-             //Entidad.x-=4;
            }
-       }          
+       }
       }
      }
-        }
+    }
   }
   
   void reinicio(){    
