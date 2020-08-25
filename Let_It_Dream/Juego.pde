@@ -342,7 +342,7 @@ class GHOST{
  void lose(){
    if((abs(Entidad.x+25)>=abs(x-40)) && abs(Entidad.x+25)<=abs(x+40) || ((Entidad.x-25)>=abs(x-40)) && (Entidad.x-25)<=abs(x+40) ){
      if((abs(Entidad.y)+80)<(abs(y)+83) && (abs(Entidad.y)+80)>(abs(y)) && (abs(Entidad.y))<(abs(y)+83) && (abs(Entidad.y))>(abs(y))){
-       inicial.modo=4;       
+      // inicial.modo=4;       
      }
    }
    

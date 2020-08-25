@@ -125,6 +125,7 @@ class pantalla{
        break;   
        
        case 5:        //GULAG
+       Entidad.vel_x=4;
        pushMatrix();
        translate(width/2,height/2);
        image(GULAG,0,-height); 

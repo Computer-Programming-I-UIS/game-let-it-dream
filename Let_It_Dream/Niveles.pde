@@ -83,7 +83,7 @@ class Escenario {
   
   
   void obtenerDatos2(){
-        String[] lines = loadStrings(filename);
+    String[] lines = loadStrings(filename);
     for(int i=0; i< lines.length;i++){
       for(int j=0;j<20;j++){
         escenario[j][i] = lines[i].charAt(j);
@@ -94,10 +94,10 @@ class Escenario {
     for (int i=0; i<rows;i++){
      for(int j=0; j<20;j++){
       if(escenario[j][i]== 'T'){
-       stroke(170,170,170);
+       stroke(0);
        strokeWeight(5);
-       fill(209,34,34);
        rect(j*60,i*160,60,30); 
+       image(suelo,(j*60)+30,(i*160)+30);
 
        if((abs(Entidad.x+25)>=abs((j*A)) && abs(Entidad.x+25)<=abs(((j*A)+60))) || ((Entidad.x-25)>=abs((j*A)) && (Entidad.x-25)<=abs(((j*A)+60)))  ){
          if((abs(Entidad.y)+1)<abs((i*L)-height) && (abs(Entidad.y)+1)>(abs((i*L)-height)-30)){

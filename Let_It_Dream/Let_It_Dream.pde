@@ -21,7 +21,7 @@ Escenario nivel_1,gulag;
 
 
 
-PImage title, fondo,game_over,GULAG; //se declara la imagen a utilizar
+PImage title, fondo,game_over,GULAG,suelo; //se declara la imagen a utilizar
 pantalla inicial;
 boton Next_1,Next_2,Next_3,Start,Controls,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
 void setup(){
@@ -32,6 +32,7 @@ void setup(){
  fondo = loadImage("Sky_2.png");
  game_over= loadImage("Final.png");
  GULAG=loadImage("Final_Gulag.png");
+ suelo=loadImage("Suelo_2.png");
  //-----------------------------------FRASES------------------------------------------
   Next_1 = new boton(width/2-50,-30,90,-50,10,"Next",40,-6); 
  //-----------------------------------HISTORIA----------------------------------------
@@ -43,7 +44,7 @@ void setup(){
  Next_3 = new boton(width/2-50,-30,90,-50,4,"Next",40,-6); 
  //------------------------------Pantalla de inicio----------------------------------------
 
- inicial = new pantalla(6); //EL 0 ES DE LA PAN
+ inicial = new pantalla(5); //EL 0 ES DE LA PAN
  //-----------------------------Botones-----------------------------------
  Start = new boton((width/2)-75,(-height/2)+100,150,-50,1,"Start",37,227); //(ubicacion x, y, grosor, largo, que tipo de boton es, nombre, posicion del texto x, y)
  Controls = new boton((width/2)-75,(-height/2)+175,150,-50,2,"Controls",71,152);
