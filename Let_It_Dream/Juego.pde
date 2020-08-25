@@ -154,9 +154,11 @@ else{
  }
  
  void lose(){
-   if(x<=Dragon.x){
+   if(x<=(Dragon.x-250)){
      inicial.modo=4;
-     x=300;
+   }
+   if(x<=(Dragon.x+125) && (abs(y)+90)>abs(Dragon.y) && abs(y)<abs(Dragon.y)){
+     inicial.modo=4;
    }
 
  }
@@ -191,11 +193,9 @@ else{
            sentido=3;
            JUMP_LEFT=true;
          } 
-           i=0;
-           //Entidad.mover_arriba();
+         i=0;
          break;
          case 'w':
-         /*
          if(sentido==2 || sentido==5){
            sentido=3;
            JUMP_RIGHT=true;
@@ -204,8 +204,7 @@ else{
            sentido=3;
            JUMP_LEFT=true;
          }         
-           i=0;                        */
-           Entidad.mover_arriba();
+         i=0;                        
          break;
 
          case 'S':
@@ -225,7 +224,7 @@ else{
 class Monster{
  float x;
  float y;
- float vel=0.002;
+ float vel=0.2;
  float ref_y; ///referencia con el personaje
  float ref_x; 
  boolean arriba = false;
@@ -255,12 +254,12 @@ class Monster{
    //Cuando el personaje se acerca
    ref_x=Entidad.x;
    ref_y=Entidad.y;
-   if(ref_x-(x)<=250){
-     //print('l');
+   if(ref_x<(x+250)){
+     print('l');
      if(abs(y)>abs(ref_y)+30){
         y-=ref_y*vel; 
      }
-     if(abs(y)<abs(ref_y)-30){
+     if(abs(y)<abs(ref_y)-10){
         y+=ref_y*vel;  
      }
    }

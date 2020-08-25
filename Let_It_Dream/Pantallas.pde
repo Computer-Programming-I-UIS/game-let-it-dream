@@ -111,6 +111,7 @@ class pantalla{
        break;
        
        case 4:  //PANTALLA DE GAME OVER        ACTIVAR
+         Entidad.sentido=5;
          nivel_1.v=0;
          Entidad.x=500;
          Entidad.y=-80;
