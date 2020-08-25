@@ -1,32 +1,12 @@
 
-//-----------------------------SUELO-------------------------------------
-
-class suelo{
-  float x;
-  float y;
-  float g;
-  float l=-150;
-  suelo(float xt, float yt, float gt, float lt){
-    x=xt;
-    y=yt;
-    g=gt;
-    l=lt; 
-  }  
-  
-  void spawn(){
-    fill(0);
-    rect(x,y,g,l);
-  }
-}
-
 //-----------------------------JUGADOR-------------------------------------
 
 class Dreamer{
  float x; 
  float y; 
  int sentido=5;
- float vel_x=20;//4
- float vel_y=20;//8
+ float vel_x=12;//4
+ float vel_y=8;//8
  boolean tecla=true; //para que el salto se haga una sola vez
  float base_x=0;
  float base_y=0; 
@@ -39,6 +19,7 @@ class Dreamer{
  boolean moverse_derecha,moverse_izquierda;
  boolean pulsar=false;
  int V;
+ boolean choque=true; //Para que haga solo un salto
  boolean pausa=true;
  Dreamer(float xt, float yt){
    x=xt;
@@ -65,7 +46,7 @@ class Dreamer{
    }
    if(fall==true){
      if(inicial.modo==2){
-       if(abs(y)>=82){
+       if(abs(y)>=81){
          y+=vel_y;
        } 
      }
@@ -73,7 +54,7 @@ class Dreamer{
        y+=vel_y;
      }     
    }
-if(y>100){
+if(y>40){
  inicial.modo=5; 
   y=-150;
   x=850;
@@ -121,7 +102,13 @@ else{
          JUMP_LEFT=false;
          i--;
        }
-     }     
+     } 
+     if(inicial.modo==2 || inicial.modo==5){
+       vel_x=4;      
+     }
+     else{
+       vel_x=12;
+     }
      
  }
  
@@ -163,15 +150,18 @@ else{
      y=-80;    
    } */    
    if (x>width+55){  //Límites de la pantalla horizontal TAL VEZ SE DEBA QUITAR
-     x=500; 
+     x=1270; 
    }      
  }
  
  void lose(){
-   if(x<=Dragon.x){
+   if(x<=(Dragon.x-250)){
      inicial.modo=4;
-     x=300;
    }
+   if(x<=(Dragon.x+125) && (abs(y)+90)>abs(Dragon.y) && abs(y)<abs(Dragon.y)){
+     inicial.modo=4;
+   }
+
  }
  
  void key_move (){
@@ -196,29 +186,32 @@ else{
          break;        
         
          case 'W':
-         if(sentido==2 || sentido==5){
-           sentido=3;
-           JUMP_RIGHT=true;
+         if(choque==true){
+             if(sentido==2 || sentido==5){
+               sentido=3;
+               JUMP_RIGHT=true;
+             }
+             if(sentido==1 || sentido==4){
+               sentido=3;
+               JUMP_LEFT=true;
+             } 
+             i=0;
+             choque=false;
          }
-         if(sentido==1 || sentido==4){
-           sentido=3;
-           JUMP_LEFT=true;
-         } 
-           i=0;
-           //Entidad.mover_arriba();
          break;
          case 'w':
-         /*
-         if(sentido==2 || sentido==5){
-           sentido=3;
-           JUMP_RIGHT=true;
+         if(choque==true){
+             if(sentido==2 || sentido==5){
+               sentido=3;
+               JUMP_RIGHT=true;
+             }
+             if(sentido==1 || sentido==4){
+               sentido=3;
+               JUMP_LEFT=true;
+             }         
+             i=0;   
+             choque=false;
          }
-         if(sentido==1 || sentido==4){
-           sentido=3;
-           JUMP_LEFT=true;
-         }         
-           i=0;                        */
-           Entidad.mover_arriba();
          break;
 
          case 'S':
@@ -268,12 +261,12 @@ class Monster{
    //Cuando el personaje se acerca
    ref_x=Entidad.x;
    ref_y=Entidad.y;
-   if(ref_x-(x)<=250){
+   if(ref_x<(x+250)){
      //print('l');
      if(abs(y)>abs(ref_y)+30){
         y-=ref_y*vel; 
      }
-     if(abs(y)<abs(ref_y)-30){
+     if(abs(y)<abs(ref_y)-10){
         y+=ref_y*vel;  
      }
    }
@@ -303,10 +296,55 @@ class enemigo{
    S4P.updateSprites(elapsedTime);    
    pushMatrix();  
    translate(x,y);
-   Sombra.draw();
-   sprites.S4P.rebound(Nix,Sombra);
-   sprites.S4P.collisionAreasVisible = true;   
-   //print(Nix.pp_collision(Norman));     
+   Sombra.draw();   
    popMatrix();     
  }  
+}
+//-----------------------------------------------------
+
+class GHOST{
+ float x;
+ float y;
+ float vel=0.01; 
+ GHOST(float xt, float yt){
+   x=xt;
+   y=yt;
+ }
+ void spawn(){
+   float elapsedTime = (float) sw.getElapsedTime();
+   S4P.updateSprites(elapsedTime);    
+   pushMatrix();  
+   translate(x,y);
+   if((x+50)>Entidad.x){
+     Ghost_LEFT.draw();   
+   }
+   else{
+     Ghost_RIGHT.draw();
+   }
+   popMatrix();       
+ }
+ 
+ void move(){
+   if((x)>Entidad.x){
+     x-=(Entidad.x*vel)*0.5;  
+   }
+   if((x)<Entidad.x){
+     x+=(Entidad.x*vel)*0.3; 
+   }   
+   if(abs(y)>abs(Entidad.y)){
+     y-=(Entidad.y*vel); 
+   }
+   else{
+     y+=(Entidad.y*vel)*0.5; 
+   }    
+ }
+ 
+ void lose(){
+   if((abs(Entidad.x+25)>=abs(x-40)) && abs(Entidad.x+25)<=abs(x+40) || ((Entidad.x-25)>=abs(x-40)) && (Entidad.x-25)<=abs(x+40) ){
+     if((abs(Entidad.y)+80)<(abs(y)+83) && (abs(Entidad.y)+80)>(abs(y)) && (abs(Entidad.y))<(abs(y)+83) && (abs(Entidad.y))>(abs(y))){
+       inicial.modo=4;       
+     }
+   }
+   
+ }
 }

@@ -8,12 +8,13 @@ import sprites.maths.*;
 import sprites.utils.*;
 //----------------------------
 //Ajustes para las entidades
-Sprite Nix,Nix_salto,Nix_izquierda,Nix_Base_Right,Nix_Base_Left,Norman,Sombra,pantalloide;
+Sprite Nix,Nix_salto,Nix_izquierda,Nix_Base_Right,Nix_Base_Left,Norman,Sombra,pantalloide, fasntasma, Ghost_RIGHT, Ghost_LEFT;
 StopWatch sw = new StopWatch();
 //-----------------------------------
 //Personajes
 Dreamer Entidad;
 Monster Dragon;
+GHOST Ghost;
 enemigo Pesadilla;
 //Niveles
 Escenario nivel_1,gulag;
@@ -22,8 +23,7 @@ Escenario nivel_1,gulag;
 
 PImage title, fondo,game_over,GULAG; //se declara la imagen a utilizar
 pantalla inicial;
-boton Start,Controls,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
-suelo base;
+boton Next_1,Next_2,Next_3,Start,Controls,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
 void setup(){
  size(1280,720,P2D);
  background(30);
@@ -32,13 +32,18 @@ void setup(){
  fondo = loadImage("Sky_2.png");
  game_over= loadImage("Final.png");
  GULAG=loadImage("Final_Gulag.png");
- //------------------------------Pantalla de inicio----------------------------------------
- 
+ //-----------------------------------FRASES------------------------------------------
+  Next_1 = new boton(width/2-50,-30,90,-50,10,"Next",40,-6); 
+ //-----------------------------------HISTORIA----------------------------------------
+ Next_2 = new boton(1183,-30,90,-50,11,"Next",40,-6); 
  pantalloide=new Sprite(this,"Imagencrack2.png",2,2,0);
- pantalloide.setFrameSequence(0,3,0.3); 
+ pantalloide.setFrameSequence(0,3,0.3);  
  
- 
- inicial = new pantalla(2); //EL 0 ES DE LA PAN
+ //-----------------------------------Frases_2-----------------------------------------
+ Next_3 = new boton(width/2-50,-30,90,-50,4,"Next",40,-6); 
+ //------------------------------Pantalla de inicio----------------------------------------
+
+ inicial = new pantalla(6); //EL 0 ES DE LA PAN
  //-----------------------------Botones-----------------------------------
  Start = new boton((width/2)-75,(-height/2)+100,150,-50,1,"Start",37,227); //(ubicacion x, y, grosor, largo, que tipo de boton es, nombre, posicion del texto x, y)
  Controls = new boton((width/2)-75,(-height/2)+175,150,-50,2,"Controls",71,152);
@@ -53,7 +58,17 @@ void setup(){
  Back = new boton(30,-30,100,-50,4,"Back",40,-6); 
  //-----------------------------------Juego-------------------------------------
  nivel_1=new Escenario(270,5,"nivel_1.txt");
+ 
+ //-----------------------------------Gulag-------------------------------------
  gulag=new Escenario(30,5,"gulag.txt");
+ 
+ Ghost_RIGHT = new Sprite(this,"Ghost_.png", 2, 3,0); //250x250
+ Ghost_RIGHT.setFrameSequence(0, 4, 0.3);
+ 
+ Ghost_LEFT = new Sprite(this,"Ghost.png", 2, 3,0); //250x250
+ Ghost_LEFT.setFrameSequence(0, 4, 0.3);
+ 
+ Ghost= new GHOST(125,-50);
  //--------------------------Entidades------------------------------
  
 
@@ -79,13 +94,9 @@ void setup(){
   Entidad= new Dreamer(500,-80); //110x110
   
   Sombra=new Sprite(this,"Missigno.png", 1, 2,0); //110X110
-  Sombra.setFrameSequence(0, 1, 0.2);
-  Pesadilla= new enemigo(1000,-80); //110x110
+  Sombra.setFrameSequence(0, 1, 0.4);
+  Pesadilla= new enemigo(width/2,-(height/2)+150); //110x110
 
-
- //----------------------------------Suelo-----------------------------------------
- base = new suelo(-5,-5,width+10,-50); //En y se debe ajustar con lios límites de las barras por abajo
- //--------------------------------Plataformas-----------------------------------
 }
 
 void draw(){
