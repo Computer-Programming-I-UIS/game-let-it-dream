@@ -5,7 +5,10 @@ game-let-it-dream created by GitHub Classroom \
 Este programa permite jugar al usuario ‘Let it dream’, un videojuego de plataformas donde tú serás el personaje principal, 
 iniciarás el juego en un mundo onírico, en el cual serás perseguido por un dragón intimidante, 
 el propósito es llegar hasta el final del recorrido sin que te caigas al vacío o el dragón te atrape.
-Eres el hacedor de tu propia historia, ¿ qué cosas te esperarán en tus peores pesadillas?
+Eres el hacedor de tu propia historia, ¿ qué cosas te esperarán en tus peores pesadillas?\
+**Librerias usadas:**\
+-Sprite.\
+-Minim.
 
 **Autores:** \
 -Andrés Leonardo Tarazona Moreno    ---->**Código**:2190411\
@@ -50,6 +53,6 @@ La imagen del fantasma fue inspirada en el Pokemón Haunter, tomada de:\
 -Joji-Misery (SoundCloud)\
 -Creador de BGM (Youtube)\
 -Rain and Thunder (Youtube)\
-
+-Broforce Soundtrack-End Of The Line\
 **Imágenes del videojuego:**
 
