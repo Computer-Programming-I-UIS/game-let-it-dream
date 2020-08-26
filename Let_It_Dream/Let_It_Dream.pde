@@ -1,6 +1,11 @@
-//ACTIVAR EL SALTO, LOS LIMITES INFERIORES EN Y Y EN EL VOID KEY_MOVE DESCOMENTAR LOS SALTOS
-//NOTA: IMPORTANTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+//--------------Música----------------
+import ddf.minim.*; //libreria Minim para el audio
 
+Minim Intro,frase,menu,juego;
+AudioPlayer P_1,P_2,P_3,P_4;
+
+music Menu,JUEGO,FRASES,IMAGEN,PERDER;
+//----------------------------
 
 //Librerías para los sprites
 import sprites.*;
@@ -21,10 +26,31 @@ Escenario nivel_1,gulag,controles;
 
 
 
-PImage title, fondo,game_over,GULAG, suelo; //se declara la imagen a utilizar
+PImage title, fondo,game_over,GULAG, suelo,pegi,E; //se declara la imagen a utilizar
 pantalla inicial;
 boton Next_1,Next_2,Next_3,Start,Controls,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
+
 void setup(){
+ //Música 
+  Intro = new Minim(this); //se crea la variable del audio
+  P_1 = Intro.loadFile("Rain.mp3"); //se importa el audio del inicio del videojuego de Pac-Man (Créditos en la descripción del programa)
+  IMAGEN = new music(4,0);  
+  PERDER = new music(7,0); 
+
+  frase = new Minim(this); //se crea la variable del audio
+  P_2 = frase.loadFile("Misery.mp3"); //se importa el audio del inicio del videojuego de Pac-Man (Créditos en la descripción del programa)
+  FRASES = new music(8,0);
+  
+  menu = new Minim(this); //se crea la variable del audio
+  P_3 = menu.loadFile("Music.mp3"); //se importa el audio del inicio del videojuego de Pac-Man (Créditos en la descripción del programa)
+  Menu = new music(0,0);
+  
+  juego = new Minim(this); //se crea la variable del audio
+  P_4 = juego.loadFile("E.O.T.L.mp3"); //se importa el audio del inicio del videojuego de Pac-Man (Créditos en la descripción del programa)
+  JUEGO = new music(1,0);
+  
+  
+ //--------------------------------------------------------------------------------
  size(1280,720,P2D);
  background(30);
  //-------------------------------Imágenes------------------------------------------
@@ -33,6 +59,8 @@ void setup(){
  game_over= loadImage("Final.png");
  GULAG=loadImage("Final_Gulag.png");
  suelo=loadImage("Suelo_2.png");
+ pegi=loadImage("pegi.png");
+ E=loadImage("E.png");
  //-----------------------------------FRASES------------------------------------------
   Next_1 = new boton(width/2-50,-30,90,-50,10,"Next",40,-6); 
  //-----------------------------------HISTORIA----------------------------------------

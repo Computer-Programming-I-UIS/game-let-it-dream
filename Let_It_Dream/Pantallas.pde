@@ -16,16 +16,21 @@ class pantalla{
   int T_2_=0; //Transparecia del texto
   int T_3_=0; //Transparecia del texto
   int T_4_=0; //Transparecia del texto  
+  int contador;
+  int demora=3;
+  int puntaje=1000;
   pantalla (int modot){
   modo = modot;  
   }
    void apartado(){
      switch(modo){
        case 0:  //PANTALLA INICIAL
-     
+         Menu.Start();
          pushMatrix();
          translate(width/2,-height+275);
-         image(title,10,0); 
+         image(title,10,0);
+         image(pegi,-550,+390); 
+         image(E,-460,+390); 
          popMatrix();      
          Start.in();
          Start.spawn();
@@ -36,6 +41,7 @@ class pantalla{
        break;
        
        case 1:  //PARA EMPEZAR EL JUEGO, VA TODO LO QUE TIENE QUE VER EL JUEGO           VER PESTANA JUEGO
+         JUEGO.Start();
          background(106,42,124);
          //fondo 
          image(fondo,640,-height/2); 
@@ -57,6 +63,14 @@ class pantalla{
          Dragon.move();
          Ghost.x=125;
          Ghost.y=-50;
+         //puntaje
+         contador=frameCount%20;
+         if(contador==10){
+           puntaje-=demora;
+         }
+         textSize(25);
+         fill(255);
+         text("Score: "+ puntaje,1140,-670);
        break;
        
        case 2: //PARA QUE SE MUESTREN LOS CONTROLES
@@ -111,11 +125,15 @@ class pantalla{
            
          }
          textSize(10+xt);    
-         text(nombres,width/2,-(height+75)+yt);
+         text(nombres,width/2,-(height+75)+yt);   
          textAlign(LEFT);
+         textSize(20);
+         text("The image of the ghost was taken from:\n© 2020 Pokémon. © 1995–2020 Nintendo/Creatures Inc.",150,-75);
+         text("Music taken from:\nJoji-Misery (SoundCloud)  -BGM maker (Youtube)\nBroforce-E.O.T.L  -Rain and Thunder (Youtube)",790,-100);
        break;
        
        case 4:  //PANTALLA DE GAME OVER        ACTIVAR
+         IMAGEN.Start();
          Entidad.sentido=5;
          nivel_1.v=0;
          Entidad.x=500;
@@ -123,13 +141,22 @@ class pantalla{
          pushMatrix();
          translate(width/2,height/2);
          image(game_over,0,-height); 
+         fill(255);
+         textSize(40);
+         text("Your Score: " + puntaje,-145,-490);
+         noFill();
          popMatrix();
          Back.in();
          Back.spawn();     
          Pesadilla.spawn();
+         //puntaje
+         
+         //fill(255);
+         
        break;   
        
        case 5:        //GULAG
+       //puntaje
        pushMatrix();
        translate(width/2,height/2);
        image(GULAG,0,-height); 
@@ -149,6 +176,9 @@ class pantalla{
        popMatrix();
        if(Entidad.y>=20){
          modo=4; 
+         IMAGEN.rep=true;
+         Menu.rep=true;
+         PERDER.rep=true;
        }
        if(Entidad.x<=200 && Entidad.x>=100 && Entidad.y<=-500 && Entidad.y>=-630){
           modo=1;
@@ -176,6 +206,7 @@ class pantalla{
        break;
        
        case 7: //IMAGEN DE LA HISTORIA
+       IMAGEN.Start();
        float elapsedTime = (float) sw.getElapsedTime();
        S4P.updateSprites(elapsedTime);    
        pushMatrix();  
@@ -187,6 +218,7 @@ class pantalla{
        break;       
        
        case 8: //FRASES CONTEXTUALIZADORAS
+       FRASES.Start();
        Next_3.in();
        Next_3.spawn(); 
        if(T_1<256){
@@ -226,6 +258,10 @@ class pantalla{
        break;       
 
        case 9: //FRASES CONTEXTUALIZADORAS
+       nivel_1.v=0;
+       Entidad.x=500;
+       Entidad.y=-80;
+       FRASES.Start();
        Next_3.in();
        Next_3.spawn(); 
        if(T_1_<256){

@@ -31,6 +31,8 @@ class boton{
            stroke(255);
          if (mousePressed==true){
            inicial.modo=1; // lo que se muestra en la pantalla   
+           JUEGO.rep=true;
+           inicial.puntaje=1000;
            //FUNCIONALIDADES (ESTABLECER UN ESTADO O ALGO PARA INICIAR EL JUEGO)
          }
        }

@@ -41,6 +41,8 @@ class Escenario {
   }
   if((Entidad.x+v)>=14250){
    inicial.modo=9; 
+   FRASES.rep=true;
+   Entidad.sentido=5;
   }  
   
       for (int i=0; i<rows;i++){
@@ -183,6 +185,7 @@ class Escenario {
   void reinicio(){    
     if(inicial.modo==4){  
        translate(0,-height+40);
+       PERDER.rep=true; 
     }    
   }
 }

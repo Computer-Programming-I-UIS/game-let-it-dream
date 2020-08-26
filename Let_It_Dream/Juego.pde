@@ -52,6 +52,7 @@ if(y>40){
  inicial.modo=5; 
   y=-150;
   x=850;
+  inicial.puntaje-=10d;
 }
 else{
   if(pausa==true){
@@ -151,9 +152,15 @@ else{
  void lose(){
    if(x<=(Dragon.x-250)){
      inicial.modo=4;
+     Menu.rep=true;
+     IMAGEN.rep=true;
+     PERDER.rep=true;
    }
    if(x<=(Dragon.x+125) && (abs(y)+90)>abs(Dragon.y) && abs(y)<abs(Dragon.y)){
      inicial.modo=4;
+     Menu.rep=true;
+     IMAGEN.rep=true;
+     PERDER.rep=true;
    }
 
  }
@@ -336,7 +343,10 @@ class GHOST{
  void lose(){
    if((abs(Entidad.x+25)>=abs(x-40)) && abs(Entidad.x+25)<=abs(x+40) || ((Entidad.x-25)>=abs(x-40)) && (Entidad.x-25)<=abs(x+40) ){
      if((abs(Entidad.y)+80)<(abs(y)+83) && (abs(Entidad.y)+80)>(abs(y)) && (abs(Entidad.y))<(abs(y)+83) && (abs(Entidad.y))>(abs(y))){
-       inicial.modo=4;       
+       inicial.modo=4;  
+       IMAGEN.rep=true;
+       Menu.rep=true;
+       PERDER.rep=true;
      }
    }
    
