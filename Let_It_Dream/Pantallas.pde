@@ -67,6 +67,11 @@ class pantalla{
          Entidad.spawn();
          Entidad.key_move();
          Entidad.saltar();
+         pushMatrix();
+         translate(0,-height+40);
+         controles.obtenerDatos3();
+         controles.crearEscenario3(); 
+         popMatrix();
          //line(width/2,0,width/2,-height);
          strokeJoin(ROUND);
          strokeWeight(5);
@@ -136,7 +141,7 @@ class pantalla{
        Entidad.saltar();
        fill(0);
        stroke(255);
-       rect(100,-630,100,130);
+       rect(100,-670,100,130);
        pushMatrix();
        translate(0,-height+40);
        gulag.obtenerDatos2();

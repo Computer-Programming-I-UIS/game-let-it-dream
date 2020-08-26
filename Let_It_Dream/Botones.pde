@@ -106,12 +106,14 @@ class boton{
     break;
 //------------------------------------------------------------------------------------BOTONES EN LA PANTALLA DE CONTROLES------------------------------------------------------------------
     case 6:
+    fill(255);
       if(FRAME<=40){
         text("Up",(x-(x1+5))+(g/2),(-height/2)-200);
       }
       else{
         text("Up",(x-(x1+5))+(g/2),(-height/2)-207);
       }
+      noFill();
       noStroke();
       stroke(255);
       if(keyPressed==true){

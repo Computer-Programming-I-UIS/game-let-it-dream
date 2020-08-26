@@ -45,14 +45,8 @@ class Dreamer{
      y+=vel_y-2;
    }
    if(fall==true){
-     if(inicial.modo==2){
-       if(abs(y)>=81){
-         y+=vel_y;
-       } 
-     }
-     else{
-       y+=vel_y;
-     }     
+    y+=vel_y;
+          
    }
 if(y>40){
  inicial.modo=5; 

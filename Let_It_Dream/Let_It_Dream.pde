@@ -17,11 +17,11 @@ Monster Dragon;
 GHOST Ghost;
 enemigo Pesadilla;
 //Niveles
-Escenario nivel_1,gulag;
+Escenario nivel_1,gulag,controles;
 
 
 
-PImage title, fondo,game_over,GULAG; //se declara la imagen a utilizar
+PImage title, fondo,game_over,GULAG, suelo; //se declara la imagen a utilizar
 pantalla inicial;
 boton Next_1,Next_2,Next_3,Start,Controls,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
 void setup(){
@@ -32,6 +32,7 @@ void setup(){
  fondo = loadImage("Sky_2.png");
  game_over= loadImage("Final.png");
  GULAG=loadImage("Final_Gulag.png");
+ suelo=loadImage("Suelo_2.png");
  //-----------------------------------FRASES------------------------------------------
   Next_1 = new boton(width/2-50,-30,90,-50,10,"Next",40,-6); 
  //-----------------------------------HISTORIA----------------------------------------
@@ -58,6 +59,7 @@ void setup(){
  Back = new boton(30,-30,100,-50,4,"Back",40,-6); 
  //-----------------------------------Juego-------------------------------------
  nivel_1=new Escenario(270,5,"nivel_1.txt");
+ controles=new Escenario(40,6,"controles.txt");
  
  //-----------------------------------Gulag-------------------------------------
  gulag=new Escenario(30,5,"gulag.txt");
