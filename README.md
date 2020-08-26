@@ -56,7 +56,15 @@ La imagen del fantasma fue inspirada en el Pokemón Haunter, tomada de:\
 -Broforce Soundtrack-End Of The Line\
 **Imágenes del videojuego:**\
 **Pantalla inicial:**\
+![./P_1.png](./P_1.PNG)
 **Contextualización historia:**\
+![./P_2.png](./P_2.PNG)
+![./P_3.png](./P_3.PNG)
+**Menú principal:**\
+![./P_4.png](./P_4.PNG)
+**Sección de controles:**\
+![./P_5.png](./P_5.PNG)
 **Vista de juego:**\
+![./P_7.png](./P_7.PNG)
 **Vista de minijuego:**
-
+![./P_6.png](./P_6.PNG)
