@@ -45,7 +45,7 @@ el dragón descenderá o ascenderá (dependiendo del caso) hasta la posición Y 
 mientras menos se demore más puntaje obtendrá. Además, cada vez que el personaje deba realizar el minijuego se le descontarán puntos. 
 
 
-**Créditos:**
+**Créditos:**\
 Todos los ‘Sprites’ de este videojuego fueron realizados por los autores.\
 La imagen del fantasma fue inspirada en el Pokemón Haunter, tomada de:\
 -© 2020 Pokémon. © 1995–2020 Nintendo / Creatures Inc.\
