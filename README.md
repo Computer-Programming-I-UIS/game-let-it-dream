@@ -54,5 +54,9 @@ La imagen del fantasma fue inspirada en el Pokemón Haunter, tomada de:\
 -Creador de BGM (Youtube)\
 -Rain and Thunder (Youtube)\
 -Broforce Soundtrack-End Of The Line\
-**Imágenes del videojuego:**
+**Imágenes del videojuego:**\
+**Pantalla inicial:**\
+**Contextualización historia:**\
+**Vista de juego:**\
+**Vista de minijuego:**
 
