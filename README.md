@@ -11,7 +11,7 @@
 Este programa permite jugar al usuario ‘Let it dream’, un videojuego de plataformas donde tú serás el personaje principal, 
 iniciarás el juego en un mundo onírico, en el cual serás perseguido por un dragón intimidante, 
 el propósito es llegar hasta el final del recorrido sin que te caigas al vacío o el dragón te atrape.
-Eres el hacedor de tu propia historia, ¿ qué cosas te esperarán en tus peores pesadillas?\
+Eres el hacedor de tu propia historia, ¿qué cosas te esperarán en tus peores pesadillas?
 
 **Objetivo:**\
 Escapar del dragón y alcanzar el mayor puntaje posible.\
@@ -56,18 +56,12 @@ Videojuego de plataformas.
 
 # **Imágenes del videojuego:**
 **Pantalla inicial:**\
+El juego inicia de la siguiente manera:  
 ![./P_1.png](./P_1.PNG)
-**Contextualización historia:**\
-![./P_2.png](./P_2.PNG)
-![./P_3.png](./P_3.PNG)
+Luego de esto, el jugador será contextualizado por otra serie de imágenes y frases, dándose a conocer el objetivo principal del juego. \
 **Menú principal:**\
+El menú principal estará compuesto de 4 secciones: 'Start', 'Controls, 'How to play?' y 'Credits'.
 ![./P_4.png](./P_4.PNG)
-**Sección de controles:**\
-![./P_5.png](./P_5.PNG)
-**Vista de juego:**\
-![./P_7.png](./P_7.PNG)
-**Vista de minijuego:**
-![./P_6.png](./P_6.PNG)
 
 # **Créditos:**
 Todos los ‘Sprites’ de este videojuego fueron realizados por los autores.\
