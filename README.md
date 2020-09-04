@@ -56,18 +56,12 @@ Videojuego de plataformas.
 
 # **Imágenes del videojuego:**
 **Pantalla inicial:**\
+El juego inicia de la siguiente manera:  
 ![./P_1.png](./P_1.PNG)
-**Contextualización historia:**\
-![./P_2.png](./P_2.PNG)
-![./P_3.png](./P_3.PNG)
+Luego de esto, el jugador será contextualizado por otra serie de imágenes y frases, dándose a conocer el objetivo principal del juego. 
 **Menú principal:**\
+El menú principal estará compuesto de 4 secciones: 'Start', 'Controls, 'How to play?' y 'Credits'.
 ![./P_4.png](./P_4.PNG)
-**Sección de controles:**\
-![./P_5.png](./P_5.PNG)
-**Vista de juego:**\
-![./P_7.png](./P_7.PNG)
-**Vista de minijuego:**
-![./P_6.png](./P_6.PNG)
 
 # **Créditos:**
 Todos los ‘Sprites’ de este videojuego fueron realizados por los autores.\
