@@ -1,19 +1,17 @@
-# game-let-it-dream
-game-let-it-dream created by GitHub Classroom \
+# LET IT DREAM
+
 **Título del juego:** "Let it dream"\
+**Autores:** \
+-Andrés Leonardo Tarazona Moreno    ---->**Código**:2190411\
+-Sergio Sebastián Oliveros Sepulveda---->**Código**:2190396
+
+**Grupo:** D2
+
 **Descripción:**\
 Este programa permite jugar al usuario ‘Let it dream’, un videojuego de plataformas donde tú serás el personaje principal, 
 iniciarás el juego en un mundo onírico, en el cual serás perseguido por un dragón intimidante, 
 el propósito es llegar hasta el final del recorrido sin que te caigas al vacío o el dragón te atrape.
 Eres el hacedor de tu propia historia, ¿ qué cosas te esperarán en tus peores pesadillas?\
-**Librerias usadas:**\
--Sprite.\
--Minim.
-
-**Autores:** \
--Andrés Leonardo Tarazona Moreno    ---->**Código**:2190411\
--Sergio Sebastián Oliveros Sepulveda---->**Código**:2190396\
-**Grupo:** D2
 
 **Objetivo:**\
 Escapar del dragón y alcanzar el mayor puntaje posible.\
@@ -22,7 +20,6 @@ El juego está hecho para que el usuario asocie sus pensamientos con la represen
 siendo este un mundo capaz de compartir los sueños y los miedos del propio jugador. 
 La finalidad de ‘Let it dream’ es buscar el razonamiento del usuario para poder identificar quiénes son realmente esos personajes que está observando y qué representan en su vida. 
 En suma, aunque los desarrolladores hayan realizado el juego con cierta perspectiva, dejaron abierta la posibilidad de interpretación para que el jugador se sumerja en un sin fin de posibilidades.  
-
 
 **Lista de características:**
 1. El juego cuenta con una sucesión de pantallas iniciales, las cuales estarán representando brevemente la historia del mismo.
@@ -44,16 +41,19 @@ el dragón descenderá o ascenderá (dependiendo del caso) hasta la posición Y 
 13. El puntaje del jugador se muestra al extremo superior derecho de la pantalla, esto dependerá de la cantidad de tiempo que demore en pasar el nivel, 
 mientras menos se demore más puntaje obtendrá. Además, cada vez que el personaje deba realizar el minijuego se le descontarán puntos. 
 
+**Género:**\
+Videojuego de plataformas.
 
-**Créditos:**\
-Todos los ‘Sprites’ de este videojuego fueron realizados por los autores.\
-La imagen del fantasma fue inspirada en el Pokemón Haunter, tomada de:\
--© 2020 Pokémon. © 1995–2020 Nintendo / Creatures Inc.\
-**Música extraída de:**\
--Joji-Misery (SoundCloud)\
--Creador de BGM (Youtube)\
--Rain and Thunder (Youtube)\
--Broforce Soundtrack-End Of The Line\
+**Clasificación por edades:**\
+![./E.png](./E.PNG)
+![./pegi.png](./pegi.PNG)
+
+**Juego realizado en:**\
+-Processing 3.5.4.\
+**Requisitos:**\
+-Libreria 'Sprites', realizada por Peter Lager.\
+-Libreria 'Minim', realizada por Damien Di Fede y Anderson Mills.
+
 **Imágenes del videojuego:**\
 **Pantalla inicial:**\
 ![./P_1.png](./P_1.PNG)
@@ -68,3 +68,17 @@ La imagen del fantasma fue inspirada en el Pokemón Haunter, tomada de:\
 ![./P_7.png](./P_7.PNG)
 **Vista de minijuego:**
 ![./P_6.png](./P_6.PNG)
+
+**Créditos:**\
+Todos los ‘Sprites’ de este videojuego fueron realizados por los autores.\
+La imagen del fantasma fue inspirada en el Pokemón Haunter, tomada de:\
+-© 2020 Pokémon. © 1995–2020 Nintendo / Creatures Inc.\
+
+**Música extraída de:**\
+-Joji-Misery (SoundCloud)\
+-Creador de BGM (Youtube)\
+-Rain and Thunder (Youtube)\
+-Broforce Soundtrack-End Of The Line\
+
+**README realizado en:**\
+-LET IT DREAM created by GitHub Classroom.
