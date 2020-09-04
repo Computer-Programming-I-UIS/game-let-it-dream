@@ -45,8 +45,8 @@ mientras menos se demore más puntaje obtendrá. Además, cada vez que el person
 Videojuego de plataformas.
 
 **Clasificación por edades:**\
-![./E.png](./E.PNG)
-![./pegi.png](./pegi.PNG)
+![./E.png](./E.png)
+![./pegi.png](./pegi.png)
 
 **Juego realizado en:**\
 -Processing 3.5.4.\
@@ -54,7 +54,7 @@ Videojuego de plataformas.
 -Libreria 'Sprites', realizada por Peter Lager.\
 -Libreria 'Minim', realizada por Damien Di Fede y Anderson Mills.
 
-**Imágenes del videojuego:**\
+# **Imágenes del videojuego:**
 **Pantalla inicial:**\
 ![./P_1.png](./P_1.PNG)
 **Contextualización historia:**\
@@ -69,7 +69,7 @@ Videojuego de plataformas.
 **Vista de minijuego:**
 ![./P_6.png](./P_6.PNG)
 
-**Créditos:**\
+# **Créditos:**
 Todos los ‘Sprites’ de este videojuego fueron realizados por los autores.\
 La imagen del fantasma fue inspirada en el Pokemón Haunter, tomada de:\
 -© 2020 Pokémon. © 1995–2020 Nintendo / Creatures Inc.\
