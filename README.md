@@ -11,7 +11,7 @@
 Este programa permite jugar al usuario ‘Let it dream’, un videojuego de plataformas donde tú serás el personaje principal, 
 iniciarás el juego en un mundo onírico, en el cual serás perseguido por un dragón intimidante, 
 el propósito es llegar hasta el final del recorrido sin que te caigas al vacío o el dragón te atrape.
-Eres el hacedor de tu propia historia, ¿ qué cosas te esperarán en tus peores pesadillas?\
+Eres el hacedor de tu propia historia, ¿qué cosas te esperarán en tus peores pesadillas?
 
 **Objetivo:**\
 Escapar del dragón y alcanzar el mayor puntaje posible.\
