@@ -68,7 +68,7 @@ class music{
      
       case 8:                   //PARA LAS FRASES Y GANAR
       P_1.pause();
-      
+      P_4.pause();
       if(rep==true){
         P_2.play();       
         Timer=frameCount%7410;

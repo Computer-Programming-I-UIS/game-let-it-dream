@@ -26,9 +26,9 @@ Escenario nivel_1,gulag,controles;
 
 
 
-PImage title, fondo,game_over,GULAG, suelo,pegi,E; //se declara la imagen a utilizar
+PImage title, fondo,game_over,GULAG, suelo,pegi,E,Cartel_1,Cartel_2,Cartel_3,Noche,Instrucciones; //se declara la imagen a utilizar
 pantalla inicial;
-boton Next_1,Next_2,Next_3,Start,Controls,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
+boton Next_1,Next_2,Next_3,Next_3_1,Next_4,Start,Controls,How_to_play,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
 
 void setup(){
  //Música 
@@ -61,6 +61,9 @@ void setup(){
  suelo=loadImage("Suelo_2.png");
  pegi=loadImage("pegi.png");
  E=loadImage("E.png");
+ Cartel_1=loadImage("Cartel 1.png");
+ Cartel_2=loadImage("Cartel 2.png"); 
+ Cartel_3=loadImage("Cartel 3.png"); 
  //-----------------------------------FRASES------------------------------------------
   Next_1 = new boton(width/2-50,-30,90,-50,10,"Next",40,-6); 
  //-----------------------------------HISTORIA----------------------------------------
@@ -69,13 +72,17 @@ void setup(){
  pantalloide.setFrameSequence(0,3,0.3);  
  
  //-----------------------------------Frases_2-----------------------------------------
- Next_3 = new boton(width/2-50,-30,90,-50,4,"Next",40,-6); 
+ Next_3 = new boton(width/2-50,-30,90,-50,5,"Next",40,-6); 
+ //-----------------------------------Frases_2-----------------------------------------
+ Next_4 = new boton(1183,-30,90,-50,12,"Next",40,-6); 
+ Noche=loadImage("Noche.png");
  //------------------------------Pantalla de inicio----------------------------------------
 
  inicial = new pantalla(6); //EL 0 ES DE LA PAN
  //-----------------------------Botones-----------------------------------
- Start = new boton((width/2)-75,(-height/2)+100,150,-50,1,"Start",37,227); //(ubicacion x, y, grosor, largo, que tipo de boton es, nombre, posicion del texto x, y)
- Controls = new boton((width/2)-75,(-height/2)+175,150,-50,2,"Controls",71,152);
+ Start = new boton((width/2)-75,(-height/2)+75,150,-50,1,"Start",37,250); //(ubicacion x, y, grosor, largo, que tipo de boton es, nombre, posicion del texto x, y)
+ Controls = new boton((width/2)-75,(-height/2)+150,150,-50,2,"Controls",71,175);
+ How_to_play=new boton((width/2)-110,(-height/2)+225,230,-50,13,"How to play?",107,100);
  //Teclas de los controles
  tecla_arriba = new boton((width/2)-37.5,(-height/2)-100,75,-75,6,"W",15,410);
  tecla_izquierda = new boton((width/2)-137.5,(-height/2),75,-75,7,"A",11,310);
@@ -83,7 +90,7 @@ void setup(){
  tecla_derecha = new boton((width/2)+62.5,(-height/2),75,-75,9,"D",11,310); //COLOCAR EL DE SALTAR (SI SE PUEDE) 
  //-------
  
- Credits = new boton((width/2)-75,(-height/2)+250,150,-50,3,"Credits",60,73); 
+ Credits = new boton((width/2)-75,(-height/2)+300,150,-50,3,"Credits",60,23); 
  Back = new boton(30,-30,100,-50,4,"Back",40,-6); 
  //-----------------------------------Juego-------------------------------------
  nivel_1=new Escenario(270,5,"nivel_1.txt");
@@ -99,8 +106,7 @@ void setup(){
  Ghost_LEFT.setFrameSequence(0, 4, 0.3);
  
  Ghost= new GHOST(125,-50);
- //--------------------------Entidades------------------------------
- 
+ //--------------------------Entidades------------------------------------------
 
   Norman=new Sprite(this,"dragon_2.png", 2, 2,0); //250x250
   Norman.setFrameSequence(0, 3, 0.3);

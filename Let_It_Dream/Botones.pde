@@ -101,10 +101,24 @@ class boton{
       }            
       break;
 
-//--------------------------------------------------------------------------------------BOTONES EN LA PANTALLA DE START-----------------------------------------------------------------
-//COLOCAR MARACDORES O LO QUE SEA
-    case 5:
-    
+    case 5: //PARA LAS PANTALLAS DEL INICIO
+      noStroke();
+      if(mouseX>=x && mouseX<=x+g ){  //PARA EVALUAR SI ESTÁ DENTRO DE LA BARRA
+       if(abs(C)<=(abs(l)+abs(y)) && abs(C)>=abs(y)){
+           strokeWeight(2);
+           stroke(255);
+         if (mousePressed==true){
+           inicial.modo=10; 
+           Entidad.x=500;
+           Entidad.y=-80;
+           //FUNCIONALIDADES (ESTABLECER UN ESTADO O ALGO PARA INICIAR EL JUEGO)
+         }
+       }
+      }
+      else{
+         strokeWeight(1);
+         stroke(0);        
+      }       
     break;
 //------------------------------------------------------------------------------------BOTONES EN LA PANTALLA DE CONTROLES------------------------------------------------------------------
     case 6:
@@ -225,10 +239,49 @@ class boton{
          strokeWeight(1);
          stroke(0);        
       }    
-      break; 
+      break;    
       
+      case 12: //Ganar (creo)
+      noStroke();
+      if(mouseX>=x && mouseX<=x+g ){  //PARA EVALUAR SI ESTÁ DENTRO DE LA BARRA
+       if(abs(C)<=(abs(l)+abs(y)) && abs(C)>=abs(y)){
+           strokeWeight(2);
+           stroke(255);
+         if (mousePressed==true){
+           inicial.modo=0; //CAMBIAR
+           Entidad.x=500;
+           Entidad.y=-80;
+           //FUNCIONALIDADES (ESTABLECER UN ESTADO O ALGO PARA INICIAR EL JUEGO)
+         }
+       }
+      }
+      else{
+         strokeWeight(1);
+         stroke(0);        
+      }    
+      break; 
+       
+      case 13: //Cómo jugar
+      noStroke();
+      if(mouseX>=x && mouseX<=x+g ){  //PARA EVALUAR SI ESTÁ DENTRO DE LA BARRA
+       if(abs(C)<=(abs(l)+abs(y)) && abs(C)>=abs(y)){
+           strokeWeight(2);
+           stroke(255);
+         if (mousePressed==true){
+           inicial.modo=11; //CAMBIAR
+           Entidad.x=500;
+           Entidad.y=-80;
+           //FUNCIONALIDADES (ESTABLECER UN ESTADO O ALGO PARA INICIAR EL JUEGO)
+         }
+       }
+      }
+      else{
+         strokeWeight(1);
+         stroke(0);        
+      }    
+      break;       
       default:
-      break;        
+      break;       
     }
    
     

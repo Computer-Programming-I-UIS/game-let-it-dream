@@ -70,7 +70,7 @@ else{
          i++;
        }
        if(x<base_x+100){
-         if(abs(y)<abs(base_y-500)){
+         if(abs(y)<abs(base_y-150)){
            y-=vel_y+6;
          }
        }
@@ -89,7 +89,7 @@ else{
          i++;
        }
        if(x>base_x-100){
-         if(abs(y)<abs(base_y-500)){
+         if(abs(y)<abs(base_y-150)){
            y-=vel_y+6;
          }
        }
@@ -201,7 +201,7 @@ else{
          }
          break;
          case 'w':
-         if(choque==true){
+         /*if(choque==true){
              if(sentido==2 || sentido==5){
                sentido=3;
                JUMP_RIGHT=true;
@@ -212,7 +212,9 @@ else{
              }         
              i=0;   
              choque=false;
-         }
+         }*/
+         Entidad.y-=20;
+         Entidad.x+=9;
          break;
 
          case 'S':

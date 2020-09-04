@@ -43,8 +43,7 @@ class Escenario {
    inicial.modo=9; 
    FRASES.rep=true;
    Entidad.sentido=5;
-  }  
-  
+  }    
       for (int i=0; i<rows;i++){
        for(int j=0; j<n;j++){
         if(escenario[j][i]== 'M'){
@@ -52,7 +51,7 @@ class Escenario {
          strokeWeight(5);
          fill(22,54,54);
          rect(j*A,i*M,60,30); 
-         
+
          if((abs(Entidad.x+25)>=abs((j*A)-v) && abs(Entidad.x+25)<=abs(((j*A)+60)-v)) || ((Entidad.x-25)>=abs((j*A)-v) && (Entidad.x-25)<=abs(((j*A)+60)-v))  ){
            if((abs(Entidad.y)+1)<abs((i*M)-height) && (abs(Entidad.y)+1)>(abs((i*M)-height)-30)){
                Entidad.y-=Entidad.vel_y;        
@@ -83,6 +82,15 @@ class Escenario {
         }
        }
      }
+     image(Cartel_1,3300,720-110);
+     image(Cartel_1,5580,720-110);
+     image(Cartel_3,6900,720-150);
+     image(Cartel_2,9570,720-120);
+     image(Cartel_1,10110,720-110);
+     image(Cartel_1,10405,720-110);
+     image(Cartel_2,10650,720-120);
+     image(Cartel_3,11720,720-310);
+     
   }
   
   

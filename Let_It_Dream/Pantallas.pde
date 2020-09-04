@@ -25,6 +25,7 @@ class pantalla{
    void apartado(){
      switch(modo){
        case 0:  //PANTALLA INICIAL
+         Entidad.sentido=5;
          Menu.Start();
          pushMatrix();
          translate(width/2,-height+275);
@@ -36,8 +37,12 @@ class pantalla{
          Start.spawn();
          Controls.in();
          Controls.spawn();  
+         How_to_play.in();
+         How_to_play.spawn();         
          Credits.in();
-         Credits.spawn();           
+         Credits.spawn(); 
+        // stroke(255);
+         //line(width/2,0,width/2,-height);
        break;
        
        case 1:  //PARA EMPEZAR EL JUEGO, VA TODO LO QUE TIENE QUE VER EL JUEGO           VER PESTANA JUEGO
@@ -75,6 +80,7 @@ class pantalla{
        
        case 2: //PARA QUE SE MUESTREN LOS CONTROLES
          //background(30);
+         stroke(0);
          background(30);
          Back.in();
          Back.spawn();     
@@ -257,13 +263,13 @@ class pantalla{
        noFill();       
        break;       
 
-       case 9: //FRASES CONTEXTUALIZADORAS
+       case 9: //Ganar
        nivel_1.v=0;
        Entidad.x=500;
        Entidad.y=-80;
        FRASES.Start();
-       Next_3.in();
-       Next_3.spawn(); 
+        Back.in();
+        Back.spawn(); 
        if(T_1_<256){
         T_1_++;
        }
@@ -298,8 +304,32 @@ class pantalla{
        text("Now wake up...",(width/2)+15,(-height/2)+225);
        textAlign(LEFT);
        noFill();       
-       break;              
+       break;    
        
+       case 10:
+       stroke(0);
+       pushMatrix();
+       translate(width/2,height/2);
+       image(Noche,0,-height); 
+       popMatrix();       
+       Next_4.in();
+       Next_4.spawn();  
+       stroke(0);
+       break;
+
+       case 11: //Cómo jugar
+         stroke(0);
+         background(30); 
+         Back.in();
+         Back.spawn();          
+         Entidad.sentido=2;
+         Entidad.spawn();      
+         Dragon.spawn();
+         Dragon.move();    
+         stroke(0);
+       break;   
+   
+   
        default:       
        break;
  
