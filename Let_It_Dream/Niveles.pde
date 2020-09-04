@@ -38,6 +38,7 @@ class Escenario {
   if(v<=13370){
     v+=8; //8   
     Entidad.x-=8;//8
+    Entidad.base_x-=8;
   }
   if((Entidad.x+v)>=14250){
    inicial.modo=9; 

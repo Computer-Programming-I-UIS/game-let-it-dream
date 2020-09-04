@@ -52,7 +52,6 @@ if(y>40){
  inicial.modo=5; 
   y=-150;
   x=850;
-  inicial.puntaje-=10d;
 }
 else{
   if(pausa==true){
@@ -144,9 +143,7 @@ else{
    if (abs(y)-55<=150){  //Límtes del suelo  REVISAR
      y=-80;    
    } */    
-   if (x>width+55){  //Límites de la pantalla horizontal TAL VEZ SE DEBA QUITAR
-     x=1270; 
-   }      
+   
  }
  
  void lose(){

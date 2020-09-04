@@ -64,6 +64,10 @@ class pantalla{
          Entidad.lose();
          Entidad.key_move();
          Entidad.saltar();
+         //lÍMTES DEL PERSONAJE
+         if ((Entidad.x+25)>width){  //Límites de la pantalla horizontal TAL VEZ SE DEBA QUITAR
+           Entidad.x-=4; 
+         }            
          Dragon.spawn();
          Dragon.move();
          Ghost.x=125;
@@ -79,7 +83,6 @@ class pantalla{
        break;
        
        case 2: //PARA QUE SE MUESTREN LOS CONTROLES
-         //background(30);
          stroke(0);
          background(30);
          Back.in();
@@ -87,6 +90,13 @@ class pantalla{
          Entidad.spawn();
          Entidad.key_move();
          Entidad.saltar();
+         //Límites del personaje
+         if ((Entidad.x)>(width+70)){  
+           Entidad.x=-50; 
+         }   
+         if ((Entidad.x-25)<-80){  
+           Entidad.x=width+50; 
+         }           
          pushMatrix();
          translate(0,-height+40);
          controles.obtenerDatos3();
@@ -306,7 +316,7 @@ class pantalla{
        noFill();       
        break;    
        
-       case 10:
+       case 10: //PAISAJE
        stroke(0);
        pushMatrix();
        translate(width/2,height/2);
@@ -320,6 +330,8 @@ class pantalla{
        case 11: //Cómo jugar
          stroke(0);
          background(30); 
+         image(fondo,640,-height/2);
+         image(Mensaje,640,-height/2);
          Back.in();
          Back.spawn();          
          Entidad.sentido=2;

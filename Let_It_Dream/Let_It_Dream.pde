@@ -26,7 +26,7 @@ Escenario nivel_1,gulag,controles;
 
 
 
-PImage title, fondo,game_over,GULAG, suelo,pegi,E,Cartel_1,Cartel_2,Cartel_3,Noche,Instrucciones; //se declara la imagen a utilizar
+PImage title, fondo,game_over,GULAG, suelo,pegi,E,Cartel_1,Cartel_2,Cartel_3,Noche,Instrucciones,Mensaje; //se declara la imagen a utilizar
 pantalla inicial;
 boton Next_1,Next_2,Next_3,Next_3_1,Next_4,Start,Controls,How_to_play,Credits,Back,tecla_arriba,tecla_abajo,tecla_derecha,tecla_izquierda;
 
@@ -64,6 +64,7 @@ void setup(){
  Cartel_1=loadImage("Cartel 1.png");
  Cartel_2=loadImage("Cartel 2.png"); 
  Cartel_3=loadImage("Cartel 3.png"); 
+
  //-----------------------------------FRASES------------------------------------------
   Next_1 = new boton(width/2-50,-30,90,-50,10,"Next",40,-6); 
  //-----------------------------------HISTORIA----------------------------------------
@@ -76,6 +77,8 @@ void setup(){
  //-----------------------------------Frases_2-----------------------------------------
  Next_4 = new boton(1183,-30,90,-50,12,"Next",40,-6); 
  Noche=loadImage("Noche.png");
+ //-----------------------------------Pantalla de Instrucciones--------------------------
+  Mensaje=loadImage("instrucciones.png");
  //------------------------------Pantalla de inicio----------------------------------------
 
  inicial = new pantalla(6); //EL 0 ES DE LA PAN
