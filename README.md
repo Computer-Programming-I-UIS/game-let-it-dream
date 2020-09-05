@@ -23,23 +23,16 @@ En suma, aunque los desarrolladores hayan realizado el juego con cierta perspect
 
 **Lista de características:**
 1. El juego cuenta con una sucesión de pantallas iniciales, las cuales estarán representando brevemente la historia del mismo.
-2. La imagen y las frases que aparecen al inicio son parte de la contextualización de la historia del juego. 
-3. El menú principal contiene una sección para revisar y probar los controles, la sección de créditos y el botón de START para iniciar el juego.
-4. El juego cuenta con su respectiva clasificación, la cual está representada en el menú.
-5. La sucesión de pantallas iniciales cuenta con botones nombrados NEXT para poder adelantarlas.  
-6. Se eligieron distintos tonos musicales para las diversas situaciones presentadas en el juego. 
-7. El personaje pierde si hace contacto con el dragón. 
-8. Si el personaje cae al vacío tendrá una nueva oportunidad de pasar el nivel completando el siguiente minijuego: 
-el jugador deberá volver a la superficie atravesando una puerta, para esto deberá subir las plataformas correspondientes y evitar que el  ‘fantasma’ que lo persigue lo atrape. 
-Cabe aclarar que si el personaje cae al vacío en el minijuego o es atrapado por el ‘fantasma’ pierde definitivamente.
-9. El salto del personaje está hecho de tal manera que se convierta en un ente, de esta manera se elevará diagonalmente hasta llegar al máximo alcance,
+2. La sucesión de pantallas iniciales cuenta con botones nombrados NEXT para poder adelantarlas.  
+3. Se eligieron distintos tonos musicales para las diversas situaciones presentadas en el juego. 
+4. El personaje pierde si hace contacto con el dragón. 
+5. Si el personaje cae al vacío tendrá una nueva oportunidad de pasar el nivel completando el siguiente minijuego: 
+6. El salto del personaje está hecho de tal manera que se convierta en un ente, de esta manera se elevará diagonalmente hasta llegar al máximo alcance,
 para luego bajar verticalmente. 
-10. El dragón que se muestra en pantalla se mueve hacia arriba y hacia abajo en un bucle infinito, pero si el personaje se acerca a determinada distancia, 
+7. El dragón que se muestra en pantalla se mueve hacia arriba y hacia abajo en un bucle infinito, pero si el personaje se acerca a determinada distancia, 
 el dragón descenderá o ascenderá (dependiendo del caso) hasta la posición Y del personaje.
-11. Todas las plataformas son creaciones propias de Processing, exceptuando las texturas de las plataformas del minijuego.
-12. Si el personaje llega al final del nivel y atraviesa el portal, se dará por victorioso, es decir, el jugador ‘despertará’.
-13. El puntaje del jugador se muestra al extremo superior derecho de la pantalla, esto dependerá de la cantidad de tiempo que demore en pasar el nivel, 
-mientras menos se demore más puntaje obtendrá. Además, cada vez que el personaje deba realizar el minijuego se le descontarán puntos. 
+8. Todas las plataformas son creaciones propias de Processing, exceptuando las texturas de las plataformas del minijuego.
+9. Si el personaje llega al final del nivel y atraviesa el portal, se dará por victorioso, es decir, el jugador ‘despertará’.
 
 **Género:**\
 Videojuego de plataformas.
@@ -54,7 +47,7 @@ Videojuego de plataformas.
 -Libreria 'Sprites', realizada por Peter Lager.\
 -Libreria 'Minim', realizada por Damien Di Fede y Anderson Mills.
 
-# **Imágenes del videojuego:**
+# **Imágenes descriptivas del videojuego:**
 **Pantalla inicial:**\
 El juego inicia de la siguiente manera:  
 ![./P_1.png](./P_1.PNG)
