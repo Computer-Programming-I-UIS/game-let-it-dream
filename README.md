@@ -60,7 +60,7 @@ El juego inicia de la siguiente manera:
 ![./P_1.png](./P_1.PNG)
 Luego de esto, el jugador será contextualizado por otra serie de imágenes y frases, dándose a conocer el objetivo principal del juego. \
 **Menú principal:**\
-El menú principal estará compuesto de 4 secciones: 'Start', 'Controls, 'How to play?' y 'Credits'.
+El menú principal estará compuesto de 4 secciones: 'Start', 'Controls, 'How to play?' y 'Credits'. \
 ![./P_4.png](./P_4.PNG)
 
 # **Créditos:**
