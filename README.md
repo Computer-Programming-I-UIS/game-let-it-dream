@@ -57,6 +57,9 @@ Luego de esto, el jugador será contextualizado por otra serie de imágenes y fr
 **Menú principal:**\
 El menú principal estará compuesto de 4 secciones: 'Start', 'Controls, 'How to play?' y 'Credits'. Además se representará el título del juego y su respectiva clasificación. \
 ![./P_8.png](./P_8.png)
+**Controles:**\
+Acá podrás moverte libremente para aprender a jugar y estar preparado:
+![./P_5.png](./P_5.PNG)
 
 # **Créditos:**
 Todos los ‘Sprites’ de este videojuego fueron realizados por los autores.\
