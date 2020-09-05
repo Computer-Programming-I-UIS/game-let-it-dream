@@ -60,8 +60,8 @@ El juego inicia de la siguiente manera:
 ![./P_1.png](./P_1.PNG)
 Luego de esto, el jugador será contextualizado por otra serie de imágenes y frases, dándose a conocer el objetivo principal del juego. \
 **Menú principal:**\
-El menú principal estará compuesto de 4 secciones: 'Start', 'Controls, 'How to play?' y 'Credits'. \
-![./P_4.png](./P_4.PNG)
+El menú principal estará compuesto de 4 secciones: 'Start', 'Controls, 'How to play?' y 'Credits'. Además se representará el título del juego y su respectiva clasificación. \
+![./P_8.png](./P_8.png)
 
 # **Créditos:**
 Todos los ‘Sprites’ de este videojuego fueron realizados por los autores.\
