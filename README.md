@@ -27,6 +27,7 @@ En suma, aunque los desarrolladores hayan realizado el juego con cierta perspect
 3. Se eligieron distintos tonos musicales para las diversas situaciones presentadas en el juego. 
 4. El personaje pierde si hace contacto con el dragón. 
 5. Si el personaje cae al vacío tendrá una nueva oportunidad de pasar el nivel completando el siguiente minijuego: 
+![./minijuego.png](./minijuego.png)
 6. El salto del personaje está hecho de tal manera que se convierta en un ente, de esta manera se elevará diagonalmente hasta llegar al máximo alcance,
 para luego bajar verticalmente. 
 7. El dragón que se muestra en pantalla se mueve hacia arriba y hacia abajo en un bucle infinito, pero si el personaje se acerca a determinada distancia, 
