@@ -8,13 +8,13 @@
 **Grupo:** D2
 
 **Descripción:**\
-Este programa permite jugar al usuario ‘Let it dream’, un videojuego de plataformas donde tú serás el personaje principal, 
+Este programa te permite jugar ‘Let it dream’, un videojuego de plataformas donde tu mismo serás el personaje principal, 
 iniciarás el juego en un mundo onírico, en el cual serás perseguido por un dragón intimidante, 
 el propósito es llegar hasta el final del recorrido sin que te caigas al vacío o el dragón te atrape.
 Eres el hacedor de tu propia historia, ¿qué cosas te esperarán en tus peores pesadillas?
 
 **Objetivo:**\
-Escapar del dragón y alcanzar el mayor puntaje posible.\
+Escapar del dragón y llegar a la meta.\
 **Propósito:**\
 El juego está hecho para que el usuario asocie sus pensamientos con la representación gráfica que se le asignan en el mismo, 
 siendo este un mundo capaz de compartir los sueños y los miedos del propio jugador. 
@@ -26,14 +26,15 @@ En suma, aunque los desarrolladores hayan realizado el juego con cierta perspect
 2. La sucesión de pantallas iniciales cuenta con botones nombrados NEXT para poder adelantarlas.  
 3. Se eligieron distintos tonos musicales para las diversas situaciones presentadas en el juego. 
 4. El personaje pierde si hace contacto con el dragón. 
-5. Si el personaje cae al vacío tendrá una nueva oportunidad de pasar el nivel completando el siguiente minijuego: 
+5. Si el personaje cae al vacío tendrá una nueva oportunidad de pasar el nivel completando el siguiente minijuego, donde deberá escapar por la puerta: 
 ![./minijuego.png](./minijuego.png)
 6. El salto del personaje está hecho de tal manera que se convierta en un ente, de esta manera se elevará diagonalmente hasta llegar al máximo alcance,
 para luego bajar verticalmente. 
 7. El dragón que se muestra en pantalla se mueve hacia arriba y hacia abajo en un bucle infinito, pero si el personaje se acerca a determinada distancia, 
 el dragón descenderá o ascenderá (dependiendo del caso) hasta la posición Y del personaje.
+![gif](https://user-images.githubusercontent.com/68023778/92294869-9f47ca80-eef2-11ea-936c-f4965dfec6ab.gif)
 8. Todas las plataformas son creaciones propias de Processing, exceptuando las texturas de las plataformas del minijuego.
-9. Si el personaje llega al final del nivel y atraviesa el portal, se dará por victorioso, es decir, el jugador ‘despertará’.
+9. Si el personaje llega al final del nivel y atraviesa el portal, se dará por victorioso, es decir, el jugador ‘despertará’. 
 
 **Género:**\
 Videojuego de plataformas.
