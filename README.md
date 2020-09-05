@@ -28,13 +28,14 @@ En suma, aunque los desarrolladores hayan realizado el juego con cierta perspect
 4. El personaje pierde si hace contacto con el dragón. 
 5. Si el personaje cae al vacío tendrá una nueva oportunidad de pasar el nivel completando el siguiente minijuego, donde deberá escapar por la puerta:  
 ![gif2](https://user-images.githubusercontent.com/68023778/92296177-69f1ab80-eef7-11ea-9989-3490da063c69.gif)
-6. El salto del personaje está hecho de tal manera que se convierta en un ente, de esta manera se elevará diagonalmente hasta llegar al máximo alcance,
+6. Durante el camino habrán carteles qué indiquen que tipo de destino le espera al jugador, debe estar atento.
+7. El salto del personaje está hecho de tal manera que se convierta en un ente, de esta manera se elevará diagonalmente hasta llegar al máximo alcance,
 para luego bajar verticalmente. 
-7. El dragón que se muestra en pantalla se mueve hacia arriba y hacia abajo en un bucle infinito, pero si el personaje se acerca a determinada distancia, 
+8. El dragón que se muestra en pantalla se mueve hacia arriba y hacia abajo en un bucle infinito, pero si el personaje se acerca a determinada distancia, 
 el dragón descenderá o ascenderá (dependiendo del caso) hasta la posición Y del personaje. \
 ![gif](https://user-images.githubusercontent.com/68023778/92294869-9f47ca80-eef2-11ea-936c-f4965dfec6ab.gif)
-8. Todas las plataformas son creaciones propias de Processing, exceptuando las texturas de las plataformas del minijuego.
-9. Si el personaje llega al final del nivel y atraviesa el portal, se dará por victorioso, es decir, el jugador ‘despertará’. 
+9. Todas las plataformas son creaciones propias de Processing, exceptuando las texturas de las plataformas del minijuego.
+10. Si el personaje llega al final del nivel y atraviesa el portal, se dará por victorioso, es decir, el jugador ‘despertará’. 
 
 **Género:**\
 Videojuego de plataformas.
