@@ -61,6 +61,7 @@ El menú principal estará compuesto de 4 secciones: 'Start', 'Controls, 'How to
 **Controles:**\
 Acá podrás moverte libremente para aprender a jugar y estar preparado:
 ![./P_5.png](./P_5.PNG)
+Lo demás lo dejamos a tus manos: inspecciona, piensa, aprende y disfruta.
 
 # **Créditos:**
 Todos los ‘Sprites’ de este videojuego fueron realizados por los autores.\
@@ -133,6 +134,7 @@ The main menu will consist of 4 sections: 'Start', 'Controls, 'How to play? ' an
 **Controls:**\
 Here you can move freely to learn to play and be prepared:
 ![./P_5.png](./P_5.PNG)
+The rest we leave to your hands: inspect, think, learn and enjoy.
 
 # **Credits:**
 All the 'Sprites' of this video game were made by the authors.\
