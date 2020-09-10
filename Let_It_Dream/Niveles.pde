@@ -38,12 +38,19 @@ class Escenario {
   if(v<=13370){
     v+=8; //8   
     Entidad.x-=8;//8
-   // Entidad.base_x-=8;   ---------> ARREGAR EL SALTO
+  }
+  else{
+    inicial.puntaje=0;
   }
   if((Entidad.x+v)>=14250){
+   inicial.T_1_=0;
+   inicial.T_2_=0;
+   inicial.T_3_=0;
+   inicial.T_4_=0;
    inicial.modo=9; 
    FRASES.rep=true;
    Entidad.sentido=5;
+   inicial.SELEC=true;
   }    
       for (int i=0; i<rows;i++){
        for(int j=0; j<n;j++){
@@ -83,6 +90,8 @@ class Escenario {
         }
        }
      }
+     switch(inicial.Selector){
+     case 1:
      image(Cartel_1,3300,720-110);
      image(Cartel_1,5580,720-110);
      image(Cartel_3,6900,720-150);
@@ -91,10 +100,29 @@ class Escenario {
      image(Cartel_1,10405,720-110);
      image(Cartel_2,10650,720-120);
      image(Cartel_3,11720,720-310);
-     
+     break;
+     case 2:
+     image(Cartel_1,3240,720-120);
+     image(Cartel_3,4200,720-150);
+     image(Cartel_2,6960,720-280);
+     image(Cartel_3,7660,720-320);
+     image(Cartel_2,9030,720-120);
+     image(Cartel_2,9820,720-120);
+     image(Cartel_3,12420,720-150);
+     break;
+     case 3:
+     image(Cartel_1,1800,720-440);
+     image(Cartel_3,3720,720-470);
+     image(Cartel_2,6840,720-120);
+     image(Cartel_2,8940,720-120);
+     image(Cartel_3,10380,720-310);
+     image(Cartel_2,13230,720-440);
+     break;
+     default:
+     break;
+     }
   }
-  
-  
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
   void obtenerDatos2(){
         String[] lines = loadStrings(filename);
     for(int i=0; i< lines.length;i++){

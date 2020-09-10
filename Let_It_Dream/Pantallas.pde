@@ -19,6 +19,9 @@ class pantalla{
   int contador;
   int demora=3;
   int puntaje=1000;
+  int Selector=0;
+  int Sel_actual=0;
+  boolean SELEC=true;
   pantalla (int modot){
   modo = modot;  
   }
@@ -54,9 +57,53 @@ class pantalla{
          //Plataformas
          pushMatrix();
          translate(0,-height+40);
-         nivel_1.obtenerDatos();
-         nivel_1.crearEscenario(Entidad);
-         nivel_1.reinicio();
+         //-----------------------SELECTOR DE NIVELES------------------------------------
+         if(SELEC==true){
+           Sel_actual=Selector;
+           Selector=round(random(1,3));
+           SELEC=false;
+         }
+         if(Sel_actual==Selector){
+           switch(Sel_actual){
+            case 1:
+            Selector=2;
+            break;
+            
+            case 2:
+            Selector=3;
+            break;
+            
+            case 3:
+            Selector=1;
+            break;
+            
+            default:
+            break;         
+           }        
+         }
+         switch(Selector){
+           case 1:               //Nivel 1
+           nivel_1.obtenerDatos();
+           nivel_1.crearEscenario(Entidad);
+           nivel_1.reinicio();
+           break;
+           
+           case 2:
+           nivel_2.obtenerDatos();
+           nivel_2.crearEscenario(Entidad);
+           nivel_2.reinicio();             
+           break;
+           
+           case 3:
+           nivel_3.obtenerDatos();
+           nivel_3.crearEscenario(Entidad);
+           nivel_3.reinicio();             
+           break;
+           
+           default:
+           break;
+         }  
+         //------------------------------------------------------------------------------
          popMatrix();
          Entidad.pausa=true;
          //Jugador        
@@ -65,8 +112,14 @@ class pantalla{
          Entidad.key_move();
          Entidad.saltar();
          //lÍMTES DEL PERSONAJE
-         if ((Entidad.x+25)>width){  //Límites de la pantalla horizontal TAL VEZ SE DEBA QUITAR
-           Entidad.x-=4; 
+         if ((Entidad.x+25)>width){ 
+           Entidad.x-=4;
+           if(Entidad.JUMP_RIGHT==true){
+             Entidad.JUMP_RIGHT=false;
+           }
+           if(Entidad.JUMP_LEFT==true){
+             Entidad.JUMP_LEFT=false;
+           }
          }            
          Dragon.spawn();
          Dragon.move();
@@ -75,7 +128,7 @@ class pantalla{
          //puntaje
          contador=frameCount%20;
          if(contador==10){
-           puntaje-=demora;
+           puntaje+=demora;
          }
          textSize(25);
          fill(255);
@@ -148,10 +201,12 @@ class pantalla{
          text("Music taken from:\nJoji-Misery (SoundCloud)  -BGM maker (Youtube)\nBroforce-E.O.T.L  -Rain and Thunder (Youtube)",790,-100);
        break;
        
-       case 4:  //PANTALLA DE GAME OVER        ACTIVAR
+       case 4:  //PANTALLA DE GAME OVER        
          IMAGEN.Start();
          Entidad.sentido=5;
          nivel_1.v=0;
+         nivel_2.v=0;
+         nivel_3.v=0;
          Entidad.x=500;
          Entidad.y=-80;
          pushMatrix();
@@ -274,12 +329,13 @@ class pantalla{
        break;       
 
        case 9: //Ganar
+       GANAR.Start();
        nivel_1.v=0;
        Entidad.x=500;
        Entidad.y=-80;
-       FRASES.Start();
-        Back.in();
-        Back.spawn(); 
+       Back.in();
+       Back.spawn();        
+
        if(T_1_<256){
         T_1_++;
        }

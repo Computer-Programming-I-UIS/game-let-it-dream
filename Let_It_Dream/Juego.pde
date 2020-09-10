@@ -45,8 +45,7 @@ class Dreamer{
      y+=vel_y-2;
    }
    if(fall==true){
-    y+=vel_y;
-          
+    y+=vel_y;        
    }
 if(y>40){
  inicial.modo=5; 
@@ -166,21 +165,54 @@ else{
    if(pulsar!=false){
      switch (key){
          case 'D' :
-           sentido=2;
-           Entidad.mover_derecha(); 
+         if(JUMP_LEFT==true){
+             if(fall==false){
+               sentido=2;
+               Entidad.mover_derecha();
+             }
+         }
+         else{
+             sentido=2;
+             Entidad.mover_derecha();           
+         }
          break;
          case 'd' :
-           sentido=2;
-           Entidad.mover_derecha(); 
+         if(JUMP_LEFT==true){
+             if(fall==false){
+               sentido=2;
+               Entidad.mover_derecha();
+             }
+         }
+         else{
+             sentido=2;
+             Entidad.mover_derecha();           
+         }
          break;        
         
          case 'A':
+         if(JUMP_RIGHT==true){
+           if(fall==false){
+             sentido=1;
+             Entidad.mover_izquierda();
+           }           
+         }
+         else{
            sentido=1;
-           Entidad.mover_izquierda(); 
+           Entidad.mover_izquierda();           
+         }
+
          break;
          case 'a':
+         if(JUMP_RIGHT==true){
+           if(fall==false){
+             sentido=1;
+             Entidad.mover_izquierda();
+           }           
+         }
+         else{
            sentido=1;
-           Entidad.mover_izquierda();
+           Entidad.mover_izquierda();           
+         }
          break;        
         
          case 'W':
@@ -198,7 +230,7 @@ else{
          }
          break;
          case 'w':
-         /*if(choque==true){
+         if(choque==true){
              if(sentido==2 || sentido==5){
                sentido=3;
                JUMP_RIGHT=true;
@@ -209,9 +241,7 @@ else{
              }         
              i=0;   
              choque=false;
-         }*/
-         Entidad.y-=20;
-         Entidad.x+=9;
+         }
          break;
 
          case 'S':
