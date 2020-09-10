@@ -38,12 +38,19 @@ class Escenario {
   if(v<=13370){
     v+=8; //8   
     Entidad.x-=8;//8
-    Entidad.base_x-=8;
+  }
+  else{
+    inicial.puntaje=0;
   }
   if((Entidad.x+v)>=14250){
+   inicial.T_1_=0;
+   inicial.T_2_=0;
+   inicial.T_3_=0;
+   inicial.T_4_=0;
    inicial.modo=9; 
    FRASES.rep=true;
    Entidad.sentido=5;
+   inicial.SELEC=true;
   }    
       for (int i=0; i<rows;i++){
        for(int j=0; j<n;j++){
@@ -93,8 +100,7 @@ class Escenario {
      image(Cartel_3,11720,720-310);
      
   }
-  
-  
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
   void obtenerDatos2(){
         String[] lines = loadStrings(filename);
     for(int i=0; i< lines.length;i++){

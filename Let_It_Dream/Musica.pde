@@ -12,8 +12,10 @@ class music{
       case 0:  //Menu               YA
       P_2.pause();
       P_1.pause();
+      print("K");
       if(rep==true){
         P_3.play();
+        print("a");
         Timer=frameCount%11850;
         if(Timer==0){
          rep=true;
@@ -66,7 +68,7 @@ class music{
       }      
       break;        
      
-      case 8:                   //PARA LAS FRASES Y GANAR
+      case 8:                   //PARA LAS FRASES 
       P_1.pause();
       P_4.pause();
       if(rep==true){
@@ -80,7 +82,20 @@ class music{
         }
       }         
       break;    
-      
+  
+      case 9:                   //GANAR
+      P_4.pause();
+      if(rep==true){
+        P_2.play();       
+        Timer=frameCount%7410;
+        if(Timer==0){
+         rep=true;
+        }
+        else{
+          rep=false;
+        }
+      }         
+      break;        
       default:
       break;
       

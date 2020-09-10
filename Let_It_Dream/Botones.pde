@@ -32,7 +32,8 @@ class boton{
          if (mousePressed==true){
            inicial.modo=1; // lo que se muestra en la pantalla   
            JUEGO.rep=true;
-           inicial.puntaje=1000;
+           inicial.puntaje=0;
+
            //FUNCIONALIDADES (ESTABLECER UN ESTADO O ALGO PARA INICIAR EL JUEGO)
          }
        }
@@ -87,12 +88,13 @@ class boton{
        if(abs(C)<=(abs(l)+abs(y)) && abs(C)>=abs(y)){
            strokeWeight(2);
            stroke(255);
-         if (mousePressed==true){
-           inicial.modo=0; 
-           Entidad.x=500;
-           Entidad.y=-80;
-           //FUNCIONALIDADES (ESTABLECER UN ESTADO O ALGO PARA INICIAR EL JUEGO)
-         }
+           if (mousePressed==true){
+             if(inicial.modo==9){ Menu.rep=true; }
+             inicial.modo=0; 
+             Entidad.x=500;
+             Entidad.y=-80;                   
+             //FUNCIONALIDADES (ESTABLECER UN ESTADO O ALGO PARA INICIAR EL JUEGO)
+           }
        }
       }
       else{

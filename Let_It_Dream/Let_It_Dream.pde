@@ -4,7 +4,7 @@ import ddf.minim.*; //libreria Minim para el audio
 Minim Intro,frase,menu,juego;
 AudioPlayer P_1,P_2,P_3,P_4;
 
-music Menu,JUEGO,FRASES,IMAGEN,PERDER;
+music Menu,JUEGO,FRASES,IMAGEN,PERDER,GANAR;
 //----------------------------
 
 //Librerías para los sprites
@@ -22,7 +22,7 @@ Monster Dragon;
 GHOST Ghost;
 enemigo Pesadilla;
 //Niveles
-Escenario nivel_1,gulag,controles;
+Escenario nivel_1,nivel_2,nivel_3,gulag,controles;
 
 
 
@@ -40,8 +40,9 @@ void setup(){
   frase = new Minim(this); //se crea la variable del audio
   P_2 = frase.loadFile("Misery.mp3"); //se importa el audio del inicio del videojuego de Pac-Man (Créditos en la descripción del programa)
   FRASES = new music(8,0);
+  GANAR = new music (9,0);
   
-  menu = new Minim(this); //se crea la variable del audio
+  menu = new Minim(this); //Menú
   P_3 = menu.loadFile("Music.mp3"); //se importa el audio del inicio del videojuego de Pac-Man (Créditos en la descripción del programa)
   Menu = new music(0,0);
   
@@ -97,6 +98,9 @@ void setup(){
  Back = new boton(30,-30,100,-50,4,"Back",40,-6); 
  //-----------------------------------Juego-------------------------------------
  nivel_1=new Escenario(270,5,"nivel_1.txt");
+ nivel_2=new Escenario(270,5,"nivel_2.txt");
+ nivel_3=new Escenario(270,5,"nivel_3.txt");
+
  controles=new Escenario(40,6,"controles.txt");
  
  //-----------------------------------Gulag-------------------------------------
