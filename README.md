@@ -21,7 +21,7 @@ The game is made for the user to associate his thoughts with the graphic represe
 3. Different musical tones were chosen for the different situations presented in the game. 
 4. The character loses if he makes contact with the dragon. 
 5. If the character falls to the void you will have a new opportunity to pass the level by completing the next minigame, where you will have to escape through the door:  
-![gif2](https://user-images.githubusercontent.com/68023778/92296177-69f1ab80-eef7-11ea-9989-3490da063c69.gif)
+![gif2 1 (1)](https://user-images.githubusercontent.com/68023778/92963170-a7928f00-f437-11ea-8597-9fd514f861c2.gif)
 6. Along the way there will be signs indicating what kind of destination awaits the player, you should be aware.
 7. The jump of the character is done in such a way that it becomes an entity, in this way it will rise diagonally until reaching the maximum range, and then descend vertically. 
 8. The dragon shown on the screen moves up and down in an infinite loop, but if the character approaches at a certain distance, the dragon will descend or ascend (depending on the case) to the Y position of the character. \
