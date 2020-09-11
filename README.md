@@ -25,7 +25,7 @@ The game is made for the user to associate his thoughts with the graphic represe
 6. Along the way there will be signs indicating what kind of destination awaits the player, you should be aware.
 7. The jump of the character is done in such a way that it becomes an entity, in this way it will rise diagonally until reaching the maximum range, and then descend vertically. 
 8. The dragon shown on the screen moves up and down in an infinite loop, but if the character approaches at a certain distance, the dragon will descend or ascend (depending on the case) to the Y position of the character. \
-![gif](https://user-images.githubusercontent.com/68023778/92294869-9f47ca80-eef2-11ea-936c-f4965dfec6ab.gif)
+![WhatsApp Video 2020-09-04 at 8 31 45 PM](https://user-images.githubusercontent.com/68023778/92964003-01e01f80-f439-11ea-949e-27dbf5e4dd22.gif)
 9. All platforms are Processing’s own creations, except for the textures of the minigame platforms.
 10. If the character reaches the end of the level and crosses the portal, he will be victorious, that is, the player will wake up. 
 
