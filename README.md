@@ -12,6 +12,11 @@
 **Description:**\
 This program allows you to play Group:Let it dream', a platform video game where you will be the main character, you will start the game in a dream world, in which you will be chased by an intimidating dragon, The purpose is to reach the end of the tour without you falling into the void or the dragon catching you. You are the maker of your own story, what things will await you in your worst nightmares?
 
+# Trailer:
+-Link del video: https://www.youtube.com/watch?v=ePRs4OsaH7g \
+![WhatsApp Video 2020-09-07 at 10 38 46 AM (1)](https://user-images.githubusercontent.com/68023778/92967590-263efa80-f43f-11ea-8c42-c776d8c42fc2.gif)
+
+
 **Objective:**\
 Escape the dragon and reach the finish line.\
 **Purpose:**\
